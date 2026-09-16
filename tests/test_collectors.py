@@ -147,6 +147,17 @@ class CollectionTests(unittest.TestCase):
             self.assertEqual(common.run_collector('tdx',tdx.collect),1)
         self.assertNotIn('sensitive-value',self.output.getvalue())
 
+    def test_oauth_failure_logs_only_allowlisted_protocol_code(self):
+        for code,expected in [('invalid_client','invalid_client'),('sensitive-value',None)]:
+            error=urllib.error.HTTPError(tdx.TOKEN_URL,400,'Bad Request',{},
+                io.BytesIO(json.dumps({'error':code,'error_description':'sensitive-value'}).encode()))
+            with patch.object(common.OPENER,'open',side_effect=error):
+                with self.assertRaises(common.CollectionError):
+                    common.request_bytes(tdx.TOKEN_URL,common.RunLog('tdx'),sensitive=True)
+            record=json.loads(self.output.getvalue().splitlines()[-1])
+            self.assertEqual(record['oauth_error'],expected)
+            self.assertNotIn('sensitive-value',self.output.getvalue())
+
     def test_tdx_pages_are_original_bytes_and_terminate_on_empty(self):
         raw=b' [\n'+json.dumps(ROW,ensure_ascii=False).encode()+b'\n] \r\n'
         calls=[]

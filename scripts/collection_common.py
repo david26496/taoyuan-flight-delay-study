@@ -23,6 +23,9 @@ END = datetime(2026, 9, 22, 2, tzinfo=TZ)  # inclusive
 TIMEOUT = 30
 MAX_ATTEMPTS = 4
 RETRY_STATUSES = {408, 416, 423, 429, 500, 502, 503, 504}
+OAUTH_ERRORS = {"invalid_client", "invalid_request", "invalid_grant", "unauthorized_client",
+                "unsupported_grant_type", "invalid_scope", "access_denied",
+                "temporarily_unavailable", "server_error"}
 
 
 def now():
@@ -132,6 +135,15 @@ def request_bytes(url, log, *, data=None, headers=None, sensitive=False):
             error = type(exc).__name__
             transport_error = True
         normalized = {k.lower(): v for k, v in response_headers.items()}
+        oauth_error = None
+        if sensitive and status != 200 and body:
+            # Only allow known protocol codes; never print error_description/body.
+            try:
+                code = json.loads(body).get("error")
+                if isinstance(code, str) and code in OAUTH_ERRORS:
+                    oauth_error = code
+            except (ValueError, UnicodeError, AttributeError):
+                pass
         if status == 200 and error is None:
             length = normalized.get("content-length")
             if length is not None and (not length.isdigit() or int(length) != len(body)):
@@ -143,6 +155,7 @@ def request_bytes(url, log, *, data=None, headers=None, sensitive=False):
                  content_type=normalized.get("content-type"),
                  content_encoding=normalized.get("content-encoding"),
                  last_modified=normalized.get("last-modified"),
+                 oauth_error=oauth_error,
                  error=error)
         if status == 200 and error is None:
             if normalized.get("content-encoding", "identity").lower() not in ("", "identity"):

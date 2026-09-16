@@ -122,7 +122,7 @@ Repository → **Actions** → 選擇 **Collect Taoyuan flight snapshots** 或 *
 4. TDX 頁面直到空陣列且整組有 `collection_complete`；確認時間欄位的實際可用程度。
 5. 若紅色失敗：檢查 HTTP status（401 常見為認證／權限、429 為限流），及推送權限；下載 recovery artifact 保存證據，再於時間窗內重跑。缺少排程 run 也要列為研究資料缺口，不能用稍晚資料偽裝補成當時快照。
 
-檔案完整性可用 Python 核對 log 中的 `sha256`：
+本機語法與離線測試指令（原始檔完整性則需另以 SHA256 對照 log）：
 
 ```bash
 python -m unittest discover -s tests -v

@@ -1,0 +1,346 @@
+{
+  "verified_at": "2026-09-16",
+  "source_url": "https://tdx.transportdata.tw/webapi/File/Swagger/V3/eb87998f-2f9c-4592-8d75-c62e5b724962",
+  "source_sha256": "99c392c84d2d8f13af0251f7b455186248efed6741c8e4e5002ab6100d92b7bf",
+  "servers": [
+    {
+      "url": "https://tdx.transportdata.tw/api/basic"
+    }
+  ],
+  "path": "/v2/Air/FIDS/Airport/Arrival/{IATA}",
+  "operation": {
+    "get": {
+      "tags": [
+        "Air"
+      ],
+      "summary": "取得指定[機場的即時入境航班]",
+      "description": "取得[指定機場]的即時入境航班",
+      "operationId": "AirApi_Arrival_2013_1",
+      "parameters": [
+        {
+          "name": "IATA",
+          "in": "path",
+          "description": "機場代碼",
+          "required": true,
+          "schema": {
+            "title": "String",
+            "type": "string",
+            "xml": {}
+          }
+        },
+        {
+          "name": "IsCargo",
+          "in": "query",
+          "description": "是否為貨機",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "$select",
+          "in": "query",
+          "description": "挑選",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$filter",
+          "in": "query",
+          "description": "過濾",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$orderby",
+          "in": "query",
+          "description": "排序",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "$top",
+          "in": "query",
+          "description": "取前幾筆",
+          "schema": {
+            "type": "integer",
+            "default": 30
+          }
+        },
+        {
+          "name": "$skip",
+          "in": "query",
+          "description": "跳過前幾筆",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "health",
+          "in": "query",
+          "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+          "schema": {
+            "enum": [
+              "true",
+              "false"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "$format",
+          "in": "query",
+          "description": "指定來源格式",
+          "required": true,
+          "schema": {
+            "enum": [
+              "JSON",
+              "XML"
+            ],
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Array",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PTX.Service.DTO.Air.Specification.V2.FIDSArrival"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "title": "Array",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PTX.Service.DTO.Air.Specification.V2.FIDSArrival"
+                },
+                "xml": {
+                  "name": "ArrayOfFIDSArrival",
+                  "namespace": "https://ptx.transportdata.tw/standard/schema/",
+                  "wrapped": true
+                }
+              }
+            }
+          }
+        },
+        "304": {
+          "description": "服務端會在 Response 加上 Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於 Request 加上 If-Modified-Since header，若沒有更新，服務端會回應 304 StatusCode 且空值 Content"
+        },
+        "299": {
+          "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "schema": {
+    "title": "FIDSArrival",
+    "required": [
+      "AirlineID",
+      "ArrivalAirportID",
+      "DepartureAirportID",
+      "FlightDate",
+      "FlightNumber",
+      "UpdateTime"
+    ],
+    "type": "object",
+    "properties": {
+      "FlightDate": {
+        "title": "DateTime",
+        "type": "string",
+        "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
+        "format": "date-time"
+      },
+      "FlightNumber": {
+        "title": "String",
+        "minLength": 1,
+        "type": "string",
+        "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
+        "xml": {
+          "name": "FlightNumber"
+        }
+      },
+      "AirRouteType": {
+        "title": "Int32",
+        "type": "integer",
+        "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']",
+        "format": "int32",
+        "nullable": true
+      },
+      "AirlineID": {
+        "title": "String",
+        "type": "string",
+        "description": "航空公司IATA國際代碼",
+        "nullable": true,
+        "xml": {
+          "name": "AirlineID"
+        }
+      },
+      "DepartureAirportID": {
+        "title": "String",
+        "type": "string",
+        "description": "起點機場IATA國際代碼",
+        "nullable": true,
+        "xml": {
+          "name": "DepartureAirportID"
+        }
+      },
+      "ArrivalAirportID": {
+        "title": "String",
+        "type": "string",
+        "description": "目的地機場IATA國際代碼",
+        "nullable": true,
+        "xml": {
+          "name": "ArrivalAirportID"
+        }
+      },
+      "ScheduleArrivalTime": {
+        "type": "string",
+        "description": "表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+        "format": "date-time",
+        "nullable": true
+      },
+      "ActualArrivalTime": {
+        "type": "string",
+        "description": "實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+        "format": "date-time",
+        "nullable": true
+      },
+      "EstimatedArrivalTime": {
+        "type": "string",
+        "description": "預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+        "format": "date-time",
+        "nullable": true
+      },
+      "ArrivalRemark": {
+        "title": "String",
+        "type": "string",
+        "description": "航班屬性狀態,為該機場觀點的狀態",
+        "nullable": true,
+        "xml": {
+          "name": "ArrivalRemark"
+        }
+      },
+      "ArrivalRemarkEn": {
+        "title": "String",
+        "type": "string",
+        "description": "航班屬性狀態(英文)",
+        "nullable": true,
+        "xml": {
+          "name": "ArrivalRemarkEn"
+        }
+      },
+      "Terminal": {
+        "title": "String",
+        "type": "string",
+        "description": "航廈",
+        "nullable": true,
+        "xml": {
+          "name": "Terminal"
+        }
+      },
+      "Gate": {
+        "title": "String",
+        "type": "string",
+        "description": "登機門(僅客機提供)",
+        "nullable": true,
+        "xml": {
+          "name": "Gate"
+        }
+      },
+      "Apron": {
+        "title": "String",
+        "type": "string",
+        "description": "停機坪(僅貨機提供)",
+        "nullable": true,
+        "xml": {
+          "name": "Apron"
+        }
+      },
+      "CodeShare": {
+        "title": "String",
+        "type": "string",
+        "description": "航班共用班號",
+        "nullable": true,
+        "xml": {
+          "name": "CodeShare"
+        }
+      },
+      "IsCargo": {
+        "title": "Boolean",
+        "type": "boolean",
+        "description": "是否為貨機"
+      },
+      "AcType": {
+        "title": "String",
+        "type": "string",
+        "description": "航空器型號",
+        "nullable": true,
+        "xml": {
+          "name": "AcType"
+        }
+      },
+      "BaggageClaim": {
+        "title": "String",
+        "type": "string",
+        "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
+        "nullable": true,
+        "xml": {
+          "name": "BaggageClaim"
+        }
+      },
+      "CheckCounter": {
+        "title": "String",
+        "type": "string",
+        "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
+        "nullable": true,
+        "xml": {
+          "name": "CheckCounter"
+        }
+      },
+      "UpdateTime": {
+        "title": "DateTime",
+        "type": "string",
+        "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+        "format": "date-time"
+      }
+    },
+    "additionalProperties": false,
+    "description": "抵達航班顯示資料",
+    "xml": {
+      "name": "FIDSArrival"
+    }
+  },
+  "securitySchemes": {
+    "TDX": {
+      "type": "oauth2",
+      "description": "TDX會員可至【會員專區-資料服務-服務金鑰】功能頁面，從預設金鑰(或建立新的金鑰)取得Client Id和Client Secret資訊，分別輸入至下方client_id和client_secret欄位、按下Authorize按鈕，即可開始於Swagger介面呼叫TDX API。",
+      "flows": {
+        "clientCredentials": {
+          "tokenUrl": "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token",
+          "scopes": {}
+        }
+      }
+    }
+  }
+}

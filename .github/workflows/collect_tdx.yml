@@ -1,0 +1,51 @@
+name: Collect TDX TPE arrivals
+
+on:
+  schedule:
+    # Minute 17 in both UTC and Asia/Taipei. Python enforces the inclusive end.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: flight-research-data-writer
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect original API responses
+        id: collect
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+        run: python scripts/collect_tdx.py
+      - name: Commit new snapshots and audit logs
+        if: ${{ always() && !cancelled() && steps.collect.outcome != 'skipped' }}
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: bash scripts/persist_snapshots.sh tdx
+      - name: Preserve evidence if collection or push failed
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tdx-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            raw/tdx/
+            logs/tdx/
+          if-no-files-found: ignore
+          retention-days: 14

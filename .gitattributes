@@ -1,0 +1,2 @@
+# Never normalize line endings or otherwise transform research response bytes.
+raw/** -text -diff

@@ -2,7 +2,7 @@
 
 此 repository 只負責保存可追溯的原始航班快照。由 **GitHub Actions 的雲端 Ubuntu runner** 執行，排程不依賴個人電腦開機。Python 3.12，僅使用標準函式庫；`requirements.txt` 無第三方執行依賴。
 
-原生排程出現延遲時，依 [獨立雲端排程切換說明](docs/external-scheduler.md) 使用 cron-job.org 觸發現有 workflow；設定工具已提供，但須完成帳號金鑰與端到端驗證後才切換。
+已使用 cron-job.org 觸發現有 workflow，並於 2026-09-17 完成端到端及實際定時蒐集驗證；查驗後設定 `EXTERNAL_SCHEDULER_ACTIVE=true`，原生 schedule 從此跳過蒐集，保留手動執行。詳見 [獨立雲端排程切換說明](docs/external-scheduler.md)。
 
 ## 研究日期與排程
 
@@ -58,7 +58,7 @@ https://tdx.transportdata.tw/api/basic/v2/Air/FIDS/Airport/Arrival/TPE
 | 狀態 | `ArrivalRemark`、`ArrivalRemarkEn` |
 | 其他提供欄位 | `AirRouteType`、`Terminal`、`Gate`、`Apron`、`CodeShare`、`IsCargo`、`AcType`、`BaggageClaim`、`CheckCounter`、`UpdateTime` |
 
-時間欄位可為 null 或未提供，保留原樣。schema 有欄位不代表每一筆實際資料都會填入；本次尚未以研究帳號 Secrets 完成 TDX 實際認證下載。schema 說明中的抵達時間格式為 `yyyy-MM-ddTHH:mm`，`UpdateTime` 含時區，後續分析才處理時間解讀。`FlightNumber` 本身不含 `AirlineID`；來源地區需另行對照機場代碼，這一步不做。
+時間欄位可為 null 或未提供，保留原樣。schema 有欄位不代表每一筆實際資料都會填入；已於 2026-09-17 使用研究帳號 Secrets 完成 TDX 認證與分頁下載驗證。schema 說明中的抵達時間格式為 `yyyy-MM-ddTHH:mm`，`UpdateTime` 含時區，後續分析才處理時間解讀。`FlightNumber` 本身不含 `AirlineID`；來源地區需另行對照機場代碼，這一步不做。
 
 認證採官方 [OIDC／OAuth 2.0 Client Credentials](https://motc-ptx.gitbook.io/tdx-xin-shou-zhi-yin/api-shi-yong-shuo-ming/api-shou-quan-yan-zheng-yu-shi-yong-fang-shi)：
 

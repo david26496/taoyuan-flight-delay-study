@@ -42,3 +42,13 @@ Actions → **Configure external cloud scheduler** → Run workflow：
 獨立排程只能改善往後的觸發，不能還原過去漏掉的即時快照。仍須以 `collection_complete`、原始檔 SHA256 與實際蒐集時間判斷每小時覆蓋率。
 
 官方依據：[cron-job.org API](https://docs.cron-job.org/rest-api.html)、[GitHub workflow dispatch](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event)。
+
+## 2026-09-17 運作查驗與切換紀錄
+
+截至 Asia/Taipei 21:20，TDX 外部定時觸發從 10:17 至 21:17 連續 12 次全部成功，完成時間為每小時 17 分 20–24 秒（末次為 23.429 秒）。桃園來源在 12:07、18:07 均成功，完成時間約為 07 分 17 秒。這些是實際定時紀錄，不僅是手動測試。已核對全部 76 個 TDX 與 9 個桃園原始檔的大小及 SHA256，均與 snapshot_saved 日誌一致。TDX 早期 3 次認證失敗已保留稽核紀錄，不算成功快照。
+
+- [最新 TDX 成功紀錄](https://github.com/david26496/taoyuan-flight-delay-study/actions/runs/35226109101)
+- [最新桃園成功紀錄](https://github.com/david26496/taoyuan-flight-delay-study/actions/runs/35208787227)
+- cron-job.org 工作 ID：TDX 8459883、桃園每日 8459884、桃園最終補抓 8459885。
+
+本次查驗後設定並讀回確認 repository Variable `EXTERNAL_SCHEDULER_ACTIVE=true`。先前原生 schedule 仍有額外快照，全部保留；後續原生 schedule 跳過蒐集，外部與手動 workflow_dispatch 照常執行。歷史漏抓無法由此切換補回，後續仍以實際蒐集時間分析。

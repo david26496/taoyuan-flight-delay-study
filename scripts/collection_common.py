@@ -91,6 +91,7 @@ class RunLog:
                   "source": self.source, "run_id": self.id,
                   "github_run_id": os.getenv("GITHUB_RUN_ID"),
                   "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"), **fields}
+        record["trigger_source"] = os.getenv("COLLECTION_TRIGGER", "local")
         text = json.dumps(record, ensure_ascii=False, sort_keys=True)
         print(text, flush=True)
         path = ROOT / "logs" / self.source / f"{now():%Y%m%d_%H%M%S}_{uuid.uuid4().hex}.json"

@@ -5,6 +5,14 @@ on:
     # Minute 17 in both UTC and Asia/Taipei. Python enforces the inclusive end.
     - cron: '17 * * * *'
   workflow_dispatch:
+    inputs:
+      trigger_source:
+        description: 'Who initiated this collection'
+        type: choice
+        default: manual
+        options:
+          - manual
+          - cron-job.org
 
 permissions:
   contents: read
@@ -15,7 +23,7 @@ concurrency:
 
 jobs:
   collect:
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && (github.event_name != 'schedule' || vars.EXTERNAL_SCHEDULER_ACTIVE != 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
@@ -31,6 +39,7 @@ jobs:
       - name: Collect original API responses
         id: collect
         env:
+          COLLECTION_TRIGGER: ${{ inputs.trigger_source || github.event_name }}
           TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
           TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
         run: python scripts/collect_tdx.py

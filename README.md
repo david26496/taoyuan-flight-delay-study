@@ -2,6 +2,8 @@
 
 此 repository 只負責保存可追溯的原始航班快照。由 **GitHub Actions 的雲端 Ubuntu runner** 執行，排程不依賴個人電腦開機。Python 3.12，僅使用標準函式庫；`requirements.txt` 無第三方執行依賴。
 
+原生排程出現延遲時，依 [獨立雲端排程切換說明](docs/external-scheduler.md) 使用 cron-job.org 觸發現有 workflow；設定工具已提供，但須完成帳號金鑰與端到端驗證後才切換。
+
 ## 研究日期與排程
 
 所有程式日期判斷、檔名及 `collected_at` 均使用 `Asia/Taipei`（UTC+08:00）。研究航班日期為 **2026-09-17 00:00:00 至 2026-09-21 23:59:59**。快照可能包含其他日期、出境航班或共掛班號，**完整保留**，不在此階段清洗、篩選或 codeshare 去重。

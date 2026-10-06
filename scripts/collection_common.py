@@ -17,9 +17,9 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("Asia/Taipei")
 ROOT = Path(__file__).resolve().parents[1]
-START = datetime(2026, 9, 17, tzinfo=TZ)
-RESEARCH_END = datetime(2026, 9, 22, tzinfo=TZ)  # exclusive
-END = datetime(2026, 9, 22, 2, tzinfo=TZ)  # inclusive
+START = datetime(2026, 10, 6, tzinfo=TZ)
+RESEARCH_END = datetime(2026, 11, 6, tzinfo=TZ)  # exclusive: 31 flight dates
+END = datetime(2026, 11, 6, 2, tzinfo=TZ)  # inclusive supplementary window
 TIMEOUT = 30
 MAX_ATTEMPTS = 4
 RETRY_STATUSES = {408, 416, 423, 429, 500, 502, 503, 504}
@@ -185,7 +185,7 @@ def reject_empty_or_html(body, headers):
 
 def run_collector(source, collect):
     if not in_window(now()):
-        print("SKIPPED: outside 2026-09-17 00:00 through 2026-09-22 02:00 Asia/Taipei")
+        print(f"SKIPPED: outside {START.isoformat()} through {END.isoformat()}")
         return 0  # no credentials, HTTP, log directories or raw files
     log = RunLog(source)
     try:

@@ -14,11 +14,11 @@ import configure_external_scheduler as scheduler
 
 class ExternalSchedulerTests(unittest.TestCase):
     def test_exact_study_schedule_and_expiration(self):
-        start=datetime(2026,9,17,tzinfo=ZoneInfo('Asia/Taipei'))
+        start=datetime(2026,10,1,tzinfo=ZoneInfo('Asia/Taipei'))
         for job,expected_count,expected_last in zip(scheduler.jobs('test-only'),
-                [122,20,1],['2026-09-22T01:17:00+08:00','2026-09-21T18:07:00+08:00','2026-09-22T00:07:00+08:00']):
+                [624,122,104,20,1],['2026-10-31T23:17:00+08:00','2026-11-06T01:17:00+08:00','2026-10-31T18:07:00+08:00','2026-11-05T18:07:00+08:00','2026-11-06T00:07:00+08:00']):
             matches=[];at=start;s=job['schedule']
-            while at<start+timedelta(days=7):
+            while at<start+timedelta(days=40):
                 if (int(at.strftime('%Y%m%d%H%M%S'))<=s['expiresAt'] and at.month in s['months']
                     and at.day in s['mdays'] and at.minute in s['minutes']
                     and (s['hours']==[-1] or at.hour in s['hours'])):matches.append(at)
@@ -47,7 +47,7 @@ class ExternalSchedulerTests(unittest.TestCase):
         network.assert_not_called()
         self.assertNotIn('secret-value',output.getvalue())
         self.assertNotIn('Authorization',output.getvalue())
-        self.assertEqual(len(output.getvalue().splitlines()),3)
+        self.assertEqual(len(output.getvalue().splitlines()),5)
 
 
 if __name__=='__main__':unittest.main()

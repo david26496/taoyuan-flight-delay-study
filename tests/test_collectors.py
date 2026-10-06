@@ -17,7 +17,7 @@ import collection_common as common
 import collect_taoyuan as taoyuan
 import collect_tdx as tdx
 
-AT = datetime(2026, 9, 17, 0, 17, tzinfo=common.TZ)
+AT = common.START + timedelta(minutes=17)
 FEED = b"1,A,CI,\xa4\xa4\xb5\xd8,0001,A1,2026/09/17,00:00,2026/09/17,00:05,NRT,Narita,\xa4\xe9,ARRIVED,B777,,,,01,\r\n"
 ROW = {"FlightDate": "2026-09-17", "FlightNumber": "123", "AirlineID": "CI",
        "DepartureAirportID": "NRT", "ArrivalAirportID": "TPE", "UpdateTime": "2026-09-17T00:10:00+08:00",
@@ -68,7 +68,7 @@ class CollectionTests(unittest.TestCase):
     def test_success_preserves_big5_crlf_and_hash(self):
         with patch.object(common.OPENER,"open",return_value=response()):
             self.assertEqual(common.run_collector("taoyuan",taoyuan.collect),0)
-        p=self.root/"raw/taoyuan/a_flight_20260917_001700.txt"
+        p=self.root/f"raw/taoyuan/a_flight_{AT:%Y%m%d_%H%M%S}.txt"
         self.assertEqual(p.read_bytes(),FEED)
         saved=next(r for r in self.records() if r['event']=='snapshot_saved')
         self.assertEqual(saved['sha256'],hashlib.sha256(FEED).hexdigest())
@@ -84,7 +84,7 @@ class CollectionTests(unittest.TestCase):
         self.assertFalse((self.root/'raw').exists())
 
     def test_no_overwrite_even_on_collision(self):
-        p=self.root/'raw/taoyuan/a_flight_20260917_001700.txt'
+        p=self.root/f'raw/taoyuan/a_flight_{AT:%Y%m%d_%H%M%S}.txt'
         common.atomic_new(p,b'original')
         with self.assertRaises(common.CollectionError):common.save_snapshot('taoyuan','a_flight','txt',FEED)
         self.assertEqual(p.read_bytes(),b'original')
@@ -123,7 +123,7 @@ class CollectionTests(unittest.TestCase):
 
     def test_final_taoyuan_snapshot_is_only_saved_once(self):
         patch('collect_taoyuan.now',return_value=common.RESEARCH_END).start()
-        common.atomic_new(self.root/'raw/taoyuan/a_flight_20260922_000700.txt',FEED)
+        common.atomic_new(self.root/f'raw/taoyuan/a_flight_{common.RESEARCH_END:%Y%m%d}_000700.txt',FEED)
         with patch.object(common.OPENER,'open') as network:
             self.assertEqual(common.run_collector('taoyuan',taoyuan.collect),0)
         network.assert_not_called()

@@ -3,7 +3,7 @@ name: Collect Taoyuan flight snapshots
 on:
   schedule:
     # UTC -> Asia/Taipei: 00:07, 06:07, 12:07, 18:07.
-    # September 22 00:07 is the one supplementary run; Python gates the year/window.
+    # November 6 00:07 is the supplementary run; Python gates the year/window.
     - cron: '7 4,10,16,22 * * *'
   workflow_dispatch:
     inputs:

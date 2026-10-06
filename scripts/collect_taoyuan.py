@@ -19,8 +19,8 @@ def validate(body, headers):
 
 
 def collect(log):
-    if now() >= RESEARCH_END and any((ROOT / "raw" / "taoyuan").glob("a_flight_20260922_*.txt")):
-        print("SKIPPED: September 22 supplementary snapshot already exists")
+    if now() >= RESEARCH_END and any((ROOT / "raw" / "taoyuan").glob(f"a_flight_{RESEARCH_END:%Y%m%d}_*.txt")):
+        print("SKIPPED: supplementary snapshot already exists for current study")
         return False
     body, headers = request_bytes(SOURCE_URL, log)
     validate(body, headers)

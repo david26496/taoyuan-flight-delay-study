@@ -1,5 +1,13 @@
 # 桃園國際機場入境航班來源地理區域與抵達延誤之探索性分析
 
+## 第二輪：2026-10-06 至 2026-11-05（31 天）
+
+目前程式日期限制已切換為 Asia/Taipei 2026-10-06 00:00 至 2026-11-06 02:00。TDX 每小時 :17，最後預定 11/6 01:17；桃園機場每日 00:07、06:07、12:07、18:07，另於 11/6 00:07 補抓一次。實際啟用前已過的時間點不補造歷史快照。
+
+原始資料沿用 `raw/tdx/`、`raw/taoyuan/` 和 `logs/`，依實際日期區分兩輪，九月資料保持不變。以下九月期間與成果為第一輪歷史說明，不代表目前執行的日期限制。
+
+第二輪外部排程分十月、十一月共五項工作；須更新 `SCHEDULER_GITHUB_TOKEN`（到期日至少 2026-11-07），執行 Configure external cloud scheduler 的 provision，確認外部觸發成功後才設定 `EXTERNAL_SCHEDULER_ACTIVE=true`。等待憑證更新時，可設為 false 使用 GitHub 原生排程，但仍可能延遲。
+
 此 repository 只負責保存可追溯的原始航班快照。由 **GitHub Actions 的雲端 Ubuntu runner** 執行，排程不依賴個人電腦開機。Python 3.12，僅使用標準函式庫；`requirements.txt` 無第三方執行依賴。
 
 已使用 cron-job.org 觸發現有 workflow，並於 2026-09-17 完成端到端及實際定時蒐集驗證；查驗後設定 `EXTERNAL_SCHEDULER_ACTIVE=true`，原生 schedule 從此跳過蒐集，保留手動執行。詳見 [獨立雲端排程切換說明](docs/external-scheduler.md)。

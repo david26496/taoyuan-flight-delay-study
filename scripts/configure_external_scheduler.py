@@ -8,28 +8,31 @@ import urllib.error
 import urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from collection_common import END
 
 REPOSITORY = "david26496/taoyuan-flight-delay-study"
 BASE = "https://api.cron-job.org"
-EXPIRY = 20260922020000
+EXPIRY = int(END.strftime('%Y%m%d%H%M%S'))
 
 
 def jobs(token):
     result = []
     specs = [
-        ("TDX hourly", "collect_tdx.yml", [17], [-1], list(range(17, 23))),
-        ("Taoyuan daily", "collect_taoyuan.yml", [7], [0, 6, 12, 18], list(range(17, 22))),
-        ("Taoyuan final", "collect_taoyuan.yml", [7], [0], [22]),
+        ("TDX October", "collect_tdx.yml", [17], [-1], list(range(6, 32)), [10]),
+        ("TDX November", "collect_tdx.yml", [17], [-1], list(range(1, 7)), [11]),
+        ("Taoyuan October", "collect_taoyuan.yml", [7], [0, 6, 12, 18], list(range(6, 32)), [10]),
+        ("Taoyuan November", "collect_taoyuan.yml", [7], [0, 6, 12, 18], list(range(1, 6)), [11]),
+        ("Taoyuan final", "collect_taoyuan.yml", [7], [0], [6], [11]),
     ]
-    for label, workflow, minutes, hours, days in specs:
+    for label, workflow, minutes, hours, days, months in specs:
         result.append({
-            "title": f"TPE study 202609 [{REPOSITORY}] {label}",
+            "title": f"TPE study 20261006-20261105 [{REPOSITORY}] {label}",
             "url": f"https://api.github.com/repos/{REPOSITORY}/actions/workflows/{workflow}/dispatches",
             "enabled": True, "saveResponses": False, "requestMethod": 1,
             "requestTimeout": 30, "redirectSuccess": False,
             "schedule": {"timezone": "Asia/Taipei", "expiresAt": EXPIRY,
                          "hours": hours, "minutes": minutes, "mdays": days,
-                         "months": [9], "wdays": [-1]},
+                         "months": months, "wdays": [-1]},
             "extendedData": {
                 "headers": {"Authorization": f"Bearer {token}",
                             "Accept": "application/vnd.github+json",
@@ -85,7 +88,7 @@ def main():
     if args.mode == "provision":
         if not token:
             raise RuntimeError("Missing SCHEDULER_GITHUB_TOKEN secret")
-        if datetime.now(ZoneInfo("Asia/Taipei")) >= datetime(2026, 9, 22, 2, tzinfo=ZoneInfo("Asia/Taipei")):
+        if datetime.now(ZoneInfo("Asia/Taipei")) >= END:
             raise RuntimeError("Study has ended; refusing to enable jobs")
     planned = jobs(token)
     matched = [(job, select_existing(response["jobs"], job)) for job in planned]

@@ -8,6 +8,8 @@
 
 第二輪外部排程分十月、十一月共五項工作；須更新 `SCHEDULER_GITHUB_TOKEN`（到期日至少 2026-11-07），執行 Configure external cloud scheduler 的 provision，確認外部觸發成功後才設定 `EXTERNAL_SCHEDULER_ACTIVE=true`。等待憑證更新時，可設為 false 使用 GitHub 原生排程，但仍可能延遲。
 
+2026-10-06 已完成第二輪啟用：五項排程建立並讀回驗證成功，新 token 有效至台北時間 11/7 00:00。外部測試 TDX 於 16:07:05 完成（run 37433938260，2,040 筆、4 個原始分頁檔），桃園於 16:08:03 完成（run 37434065376，1 個原始檔），皆已回存並核對大小與 SHA256。已設定並讀回確認 `EXTERNAL_SCHEDULER_ACTIVE=true`；後續由 cron-job.org 定時觸發，原生 schedule 跳過。
+
 此 repository 只負責保存可追溯的原始航班快照。由 **GitHub Actions 的雲端 Ubuntu runner** 執行，排程不依賴個人電腦開機。Python 3.12，僅使用標準函式庫；`requirements.txt` 無第三方執行依賴。
 
 已使用 cron-job.org 觸發現有 workflow，並於 2026-09-17 完成端到端及實際定時蒐集驗證；查驗後設定 `EXTERNAL_SCHEDULER_ACTIVE=true`，原生 schedule 從此跳過蒐集，保留手動執行。詳見 [獨立雲端排程切換說明](docs/external-scheduler.md)。

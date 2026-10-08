@@ -1,0 +1,57 @@
+name: Case2 TDX Departure
+
+on:
+  workflow_dispatch:
+    inputs:
+      trigger_source:
+        description: 'Who initiated this collection'
+        type: choice
+        default: manual
+        options:
+          - manual
+          - cron-job.org
+
+permissions:
+  contents: read
+
+concurrency:
+  group: case2-tdx-departure
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Collect original API responses
+        id: collect
+        env:
+          COLLECTION_TRIGGER: ${{ inputs.trigger_source || github.event_name }}
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+        run: python -B scripts/case2/collect_tdx_departure.py
+      - name: Commit new snapshots and audit logs
+        if: ${{ always() && !cancelled() && steps.collect.outcome != 'skipped' }}
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: bash scripts/case2/persist_snapshots.sh tdx
+      - name: Preserve evidence if collection or push failed
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: case2-tdx-departure-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            raw/case2/tdx/departure/
+            logs/case2/tdx/
+          if-no-files-found: ignore
+          retention-days: 14

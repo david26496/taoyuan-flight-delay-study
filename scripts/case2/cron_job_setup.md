@@ -10,7 +10,7 @@
 
 Name：**Case2 TDX Departure**。不新增 Taoyuan Departure，也不新增 TDX Arrival。
 
-先將 `.github/workflows/case2_tdx_departure.yml` 與 scripts 部署到 repository 預設分支，手動 workflow_dispatch 通過 live QA，再建立並啟用新 job。
+已部署到 `main` 並通過 [manual run 37754838546](https://github.com/david26496/taoyuan-flight-delay-study/actions/runs/37754838546) 的完整 live QA。下一步可由研究者建立並啟用此唯一新 job；本次不直接操作 cron-job.org。
 
 Method：`POST`
 
@@ -43,9 +43,9 @@ Body（目前 repo 文件使用 main；若預設分支不同，改成實際預�
 
 Timezone：`Asia/Taipei`。每小時 **:22**（cron 表示 `22 * * * *`），與 repo 的 Case 1 TDX Arrival :17 錯開 5 分鐘；現有桃園 00:07／06:07／12:07／18:07 完全不變。
 
-依據：現有 `.github/workflows/collect_tdx.yml` 與 README 2026-10-06 重啟說明；本次未登入讀回外部 scheduler，人工確認它仍為 :17 後才套用。如果實際不同，只调整新 Departure 時間，使其錯開數分鐘。
+依據：現有 `.github/workflows/collect_tdx.yml`、重啟說明，以及 GitHub 2026-10-08 15:17:11、16:17:09（Asia/Taipei）的成功 workflow_dispatch 實際紀錄。支持 Arrival 每小時 :17；未直接登入讀回 cron-job.org。若啟用時設定已改，只調整新 Departure，使其錯開約 5 分鐘。
 
-既有 `docs/external-scheduler.md` 的 9 月驗證顯示 TDX 約 :17:20–24 完成，但這不是 10 月最新 duration 證據；延遲或重試可能超過 5 分鐘。新流程有獨立 concurrency 與安全 fetch/rebase/push retry 保護，沒有更改 Arrival。
+2026-10-08 最近兩次外部 Arrival runs 約 21–26 秒完成；本次 Departure 約 21 秒完成。延遲或重試仍可能超過 5 分鐘。新流程有獨立 concurrency 與安全 fetch/rebase/push retry 保護，沒有更改 Arrival。
 
 收集 window 繼承現有 helper：截至 **2026-11-06 02:00 +08:00**，最後正常 hourly Departure 觸發為 **11/6 01:22**。從實際啟用後才開始，不補歷史觸發。新 job 可設定結束日期；若服務無此功能，屆時僅停用新 Departure job。Case 1 jobs 保持原設定。
 
@@ -63,4 +63,4 @@ Timezone：`Asia/Taipei`。每小時 **:22**（cron 表示 `22 * * * *`），與
 6. 記錄首次成功 collection 的實際 timestamp 到 coverage 文件；首次手動通過後，觀察至少下一次定時成功。
 7. 若失敗，查看 logs 與 recovery artifact。不要覆寫 raw 或 force push。
 
-本次沒有 commit/push/deploy 或 cron 操作；外部持續運轉狀態仍待研究者驗證。
+部署 commit `ca46ae69c3ecf26b05ca39caba5d1406daab5020`、首次 raw/log commit `4f3fb74e6f47b06d05a291d97f2c793f01806c39` 已安全 push。首次有效 Departure timestamp：2026-10-08T17:10:54.551714+08:00。cron 尚未建立；建立後仍需驗證第一次定時成功。

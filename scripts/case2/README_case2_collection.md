@@ -2,12 +2,12 @@
 
 ## 目標與目前狀態
 
-建立 Arrival + Departure 的真實 flight features 基礎。本次僅新增 TDX Departure；程式與離線測試完成，尚未部署、尚未通過 authenticated live collection，不能宣稱雙向持續收集已完成。
+建立 Arrival + Departure 的真實 flight features 基礎。本次僅新增 TDX Departure；已部署並通過第一次 authenticated live collection 驗收；cron 尚未建立，持續排程收集仍待啟用。
 
 | Source | Arrival | Departure | Source path |
 |---|---|---|---|
 | Taoyuan Airport | Existing | Existing | `raw/taoyuan/a_flight_*.txt`，同檔 A + D |
-| TDX | Existing, active per researcher's confirmation | New, pending activation | Arrival: `raw/tdx/`; Departure: `raw/case2/tdx/departure/` |
+| TDX | Existing, active per researcher's confirmation | New, first live run validated; cron pending | Arrival: `raw/tdx/`; Departure: `raw/case2/tdx/departure/` |
 
 桃園現有 a_flight raw 已含 A + D，不新增桃園 collector、workflow 或 cron job。不複製任何既有 raw。Case 1 live collectors/workflows 與 frozen Phase 1/2/3、Master、figures、reports 均不修改。
 
@@ -57,7 +57,7 @@ metadata 放在 `logs/case2/tdx/`，含 ISO 8601 +08:00、timezone、source=TDX�
 
 ## Workflow、排程與 Git
 
-只有 `workflow_dispatch`，沒有新增原生 schedule。建議 cron-job.org 每小時 :22（Asia/Taipei），與 repo 記載的 TDX Arrival :17 錯開 5 分鐘。實際外部設定未登入讀回，本次不修改任何既有 cron job；啟用前人工確認 :17 仍正確。详見 `cron_job_setup.md`。
+只有 `workflow_dispatch`，沒有新增原生 schedule。建議 cron-job.org 每小時 :22（Asia/Taipei），與 repo 記載的 TDX Arrival :17 錯開 5 分鐘。GitHub 實際外部 dispatch 紀錄確認 2026-10-08 15:17、16:17 均成功；未直接登入 cron-job.org 讀回設定，且不修改任何既有 cron job。详見 `cron_job_setup.md`。
 
 獨立 concurrency group `case2-tdx-departure`、`cancel-in-progress: false`：同一 Departure 不重疊，GitHub 預設最多保留一個 pending，新 trigger 可能取代較舊 pending；不取消正在跑的工作。不加入 Case 1 的 group，避免擠掉 pending Arrival。
 
@@ -67,11 +67,11 @@ metadata 放在 `logs/case2/tdx/`，含 ISO 8601 +08:00、timezone、source=TDX�
 
 ## Coverage 與 gap
 
-Historical Case 1、collection gap、restart、TDX Departure 首次成功時間必須分開。README 記載 2026-10-06 16:07:05 TDX、16:08:03 桃園重新啟用驗證成功；這是文件證據，不是本次雲端重新核驗。歷史實際邊界與連續性仍待確認。TDX Departure start 目前 UNKNOWN / NOT STARTED，不以寫程式或 mock test 日期代替。
+Historical Case 1、collection gap、restart、TDX Departure 首次成功時間必須分開。README 記載 2026-10-06 16:07:05 TDX、16:08:03 桃園重新啟用驗證成功；這是文件證據，不是本次雲端重新核驗。歷史實際邊界與連續性仍待確認。TDX Departure first valid timestamp 為 **2026-10-08T17:10:54.551714+08:00**（第一個成功 raw page）。本次 run `37754838546` 在 17:10:57.393899 完成；4 頁、2,082 rows，最後為原始 `[]`。Raw/log commit：`4f3fb74e6f47b06d05a291d97f2c793f01806c39`。
 
 `common_start = max(current valid Arrival coverage start, TDX Departure coverage start)`。
 
-共同起點僅是候選區間，還須核對各來源實際成功快照與中間缺口。較早 Arrival 可留作參考，但不能假裝當時已有 TDX Departure。桃園既有 Departure 不代表 TDX 也有同期間 coverage。不裁切 raw、不補 gap。
+目前 common_start candidate 為 **2026-10-08T17:10:54.551714+08:00**（既有 Arrival 重啟早於此刻）；共同起點僅是候選區間，還須核對各來源實際成功快照與中間缺口。較早 Arrival 可留作參考，但不能假裝當時已有 TDX Departure。桃園既有 Departure 不代表 TDX 也有同期間 coverage。不裁切 raw、不補 gap。
 
 詳細本機報告：`/Users/david/Documents/University/碩一/巨量資料管理/1007/case2/tdx_departure/reports/collection_windows.md`。
 
@@ -79,9 +79,15 @@ Historical Case 1、collection gap、restart、TDX Departure 首次成功時間�
 
 離線測試在 `1007/case2/tdx_departure/scripts/test_departure.py`；mock fixtures 僅為測試，不是研究資料。已測 1000+2+空頁、短頁續抓、內容與 SHA、方向、失敗拒收、重試、不覆寫、Git 實際 push race 與 Case 1 不變。
 
-官方 endpoint 無認證連線回傳 401，僅證明可連線；本機沒有 credentials，authenticated live API、真實頁数/筆數、真實 5–20 rows semantic QA 尚未驗證。GitHub 未登入查詢為 404，不能據此判定既有 workflows 停用。程式就緒不等於已部署或持續收集成功。
+[首次正式 GitHub run 37754838546](https://github.com/david26496/taoyuan-flight-delay-study/actions/runs/37754838546) 的 collect、commit/push 與整體均成功，透過既有 GitHub Secrets 完成認證。本機未取得或保存 TDX credential values。
 
-部署到預設分支後先手動 dispatch，確認 Action 成功、`collection_complete`、全部 raw SHA 與 TPE departure-side 語意，再啟用唯一新的 cron job，至少檢查下一次定時成功；未完成前不宣稱基礎設施已全面啟用。
+Live QA：4 頁（1000 + 1000 + 82 + []），2,082 rows，全部 DepartureAirportID=TPE；每页大小/SHA256 與 metadata 一致。20 列抽樣皆為其他 destination airport，ScheduleDepartureTime/EstimatedDepartureTime/DepartureRemark 都存在；ActualDepartureTime 11/20、AcType 16/20、IsCargo 20/20，missing 保留。完整此快照含 142 cargo、5 cancelled、930 missing AcType、911 missing Actual rows，未刪除。數字只描述此快照，不是 unique flights。
+
+Live data commit 僅新增 4 raw + 10 logs；沒有改写既有 raw。push 記錄確認無 race rejection/conflict，未 force push。Case 1 collection 程式及 workflows 與部署前一致，GitHub state 都是 active；近期外部 runs 成功。原生 schedule skipped 是原有外部 scheduler 設計，不是本次停用。
+
+本機驗收證據：`1007/case2/tdx_departure/qa/first_live_validation.json`、`first_live_sample_20_rows.json`、`first_live_git_push.json` 與 `reports/live_acceptance.md`。
+
+**TDX Departure live collection deployment validated.** 只有首次 manual collection 通過，尚未建立 cron；下一步只新增 `Case2 TDX Departure`，每小時 :22（Asia/Taipei），再確認首次定時成功。全部 Case 1 jobs KEEP ACTIVE。收集截止仍為 2026-11-06 02:00 +08:00。
 
 ## Future work（本次不執行）
 

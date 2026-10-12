@@ -1,0 +1,23 @@
+name: Repair existing Case1 scheduler authentication
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: external-scheduler-configuration
+  cancel-in-progress: false
+jobs:
+  repair:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - name: Repair existing jobs and dispatch validation
+        env:
+          CRON_JOB_API_KEY: ${{ secrets.CRON_JOB_API_KEY }}
+          SCHEDULER_GITHUB_TOKEN: ${{ secrets.SCHEDULER_GITHUB_TOKEN }}
+        run: python -B scripts/maintenance/repair_case1_scheduler.py

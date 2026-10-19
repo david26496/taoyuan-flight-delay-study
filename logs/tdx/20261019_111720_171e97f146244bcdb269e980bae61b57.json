@@ -1,0 +1,1 @@
+{"collected_at": "2026-10-19T11:17:20.199988+08:00", "error": "HTTP request failed: status=400, error=HTTP 400", "event": "collection_failed", "github_run_attempt": "1", "github_run_id": "39193960384", "run_id": "a48761de399f4d3589e43c9ac3df2e1d", "snapshots": [], "source": "tdx", "trigger_source": "cron-job.org"}

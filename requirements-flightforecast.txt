@@ -1,0 +1,2 @@
+# XLS validation only; existing collectors keep their original dependencies.
+xlrd==2.0.2

@@ -1,9 +1,6 @@
 name: Collect TDX TPE arrivals
 
 on:
-  schedule:
-    # Minute 17 in both UTC and Asia/Taipei. Python enforces the inclusive end.
-    - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
       trigger_source:
@@ -23,7 +20,7 @@ concurrency:
 
 jobs:
   collect:
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && (github.event_name != 'schedule' || vars.EXTERNAL_SCHEDULER_ACTIVE != 'true')
+    if: ${{ false }} # TDX collection retired by researcher on 2026-10-28
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:

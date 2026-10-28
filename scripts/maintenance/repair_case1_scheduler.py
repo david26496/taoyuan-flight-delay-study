@@ -33,6 +33,7 @@ def request(url, token, method='GET', payload=None):
         return exc.code, {}  # Never expose response/request/credential details.
 
 def main():
+    raise RuntimeError("Legacy TDX reactivation retired; use configure_collection_sources.py")
     key = os.getenv('CRON_JOB_API_KEY', '').strip()
     if not key or now() >= END:
         raise RuntimeError('missing scheduler API key or collection window ended')

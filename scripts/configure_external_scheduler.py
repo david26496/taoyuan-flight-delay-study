@@ -18,8 +18,6 @@ EXPIRY = int(END.strftime('%Y%m%d%H%M%S'))
 def jobs(token):
     result = []
     specs = [
-        ("TDX October", "collect_tdx.yml", [17], [-1], list(range(6, 32)), [10]),
-        ("TDX November", "collect_tdx.yml", [17], [-1], list(range(1, 7)), [11]),
         ("Taoyuan October", "collect_taoyuan.yml", [7], [0, 6, 12, 18], list(range(6, 32)), [10]),
         ("Taoyuan November", "collect_taoyuan.yml", [7], [0, 6, 12, 18], list(range(1, 6)), [11]),
         ("Taoyuan final", "collect_taoyuan.yml", [7], [0], [6], [11]),

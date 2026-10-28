@@ -1,0 +1,31 @@
+name: Configure active collection sources
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'apply: disable TDX cron jobs and enable forecast; status: inspect only'
+        required: true
+        type: choice
+        default: status
+        options: [status, apply]
+permissions:
+  contents: read
+concurrency:
+  group: external-scheduler-configuration
+  cancel-in-progress: false
+jobs:
+  configure:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - name: Configure collection sources
+        env:
+          CRON_JOB_API_KEY: ${{ secrets.CRON_JOB_API_KEY }}
+          SCHEDULER_GITHUB_TOKEN: ${{ secrets.SCHEDULER_GITHUB_TOKEN }}
+          MODE: ${{ inputs.mode }}
+        run: python -B scripts/configure_collection_sources.py "$MODE"

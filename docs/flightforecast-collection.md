@@ -50,3 +50,12 @@ python -B scripts/collect_flightforecast.py --current-only \
 ## Git 安全
 
 獨立 forecast concurrency group，cancel-in-progress=false；只 add `raw/taoyuan_forecast/`、`logs/taoyuan_forecast/` 新檔。Push 前 fetch/rebase，最多四次安全重試，無 force push；失敗時 recovery artifact 保留原始證據。與既有桃園 raw collector 的資料路徑互不覆蓋。
+
+## 2026-10-28 首次部署驗收
+
+- [首次正式收集 run 40652033812](https://github.com/david26496/taoyuan-flight-delay-study/actions/runs/40652033812)：collect、commit/push 成功，122 個報表（61 XLS + 61 ODS），涵蓋 2026-09-29 至 2026-10-29。31 日初版、30 日更新版，各兩種格式。
+- Data commit：`7511bcedb3a18c1712151ce6356ba3bbedcfcd1b`。已逐檔核對 size/SHA256 與 workbook parse，全數通過；commit 僅新增 forecast raw/index/log。
+- [來源切換 run 40652274093](https://github.com/david26496/taoyuan-flight-delay-study/actions/runs/40652274093)：成功停用 TDX jobs `8459883`、`8589253`、`8589254`、`8604010`；沒有刪除 jobs 或歷史 raw。
+- 新預報表 job `8739783`：enabled=true、Asia/Taipei、minute=12、expiresAt=20261106020000，均已直接讀回。下一次定時為 2026-10-28 16:12 +08:00；本次驗收是 manual run，尚未把未來定時執行當成已成功。
+- 本機 staging 6 檔成功後，重跑全部 unchanged；6 項 forecast/scheduler 範圍檢查及 4 項既有桃園 scheduler regression checks 通過。
+- 本機證據：`1007/flightforecast_integration/qa/github_raw_acceptance.json`、`cloud_acceptance_events.json`。

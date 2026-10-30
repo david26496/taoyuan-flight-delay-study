@@ -115,41 +115,6 @@ logs/tdx/
 - 兩個 workflow 共用 concurrency group，不會主動中斷已開始的工作。Git 僅加入新的 raw/log，無變更不 commit；push 衝突先 fetch/rebase，最多 4 次推送，不 force-push。
 - 下載失敗仍提交稽核 log，workflow 保持失敗；push 或下載失敗時另保存 14 天 recovery artifact（raw 與安全 log）。若 checkout、runner 或 GitHub 本身失效，artifact 也可能無法生成。
 
-## 啟用 GitHub Actions
-
-1. 將程式和兩份 workflow 推送至 repository 的 **預設分支 `main`**。如果預設分支不是 main，先在 GitHub 設定正確分支；GitHub 排程只使用預設分支。手動選到其他分支時，job 會跳過。
-2. Repository → **Settings → Secrets and variables → Actions → New repository secret**，分別建立：
-   - `TDX_CLIENT_ID`
-   - `TDX_CLIENT_SECRET`
-3. 值從 TDX 會員中心的 API 金鑰頁取得，確認帳號可使用航空基礎服務。**不要將值貼到程式、README、issue 或 commit**。不需另加 PAT；workflow 用 GitHub 自動提供的 `GITHUB_TOKEN` 推送。
-4. Settings → Actions → General：允許使用 GitHub Actions 及本 workflow 使用的官方 actions。workflow 已宣告 job 的 `contents: write`；組織政策、ruleset 或 main 的 branch protection 仍可能禁止 bot 直接 push，須由管理者安排允許的自動資料提交方式，不能假設 YAML 可以繞過政策。
-5. 確認 private repository 的 Actions 可用額度／支出上限足夠，且 Actions 未停用。
-
-以上設定完成並且 workflow 位於 main 後，排程由 GitHub 雲端執行，關掉個人電腦也不影響。
-
-## 手動執行與確認排程
-
-Repository → **Actions** → 選擇 **Collect Taoyuan flight snapshots** 或 **Collect TDX TPE arrivals** → **Run workflow** → 分支選 `main` → Run workflow。
-
-研究期間前手動執行應顯示 `SKIPPED`，這可驗證 workflow 啟動，但**無法驗證 TDX Secrets 或資料 endpoint**；需在蒐集窗內確認第一次有效下載。
-
-每次檢查：
-
-1. Actions run 清單是否有 `schedule` 觸發的新紀錄（手動執行的 `workflow_dispatch` 不等於排程已成功）。比較 run 實際開始時間與上表預定台北時間。
-2. Collect 步驟有 `snapshot_saved` 和 `collection_complete`，而非僅綠色的 `SKIPPED`。
-3. Commit 步驟成功，`main` 最新 commit 包含對應 raw 檔及 log；`collected_at` 為預期日期和 `+08:00`。
-4. TDX 頁面直到空陣列且整組有 `collection_complete`；確認時間欄位的實際可用程度。
-5. 若紅色失敗：檢查 HTTP status（401 常見為認證／權限、429 為限流），及推送權限；下載 recovery artifact 保存證據，再於時間窗內重跑。缺少排程 run 也要列為研究資料缺口，不能用稍晚資料偽裝補成當時快照。
-
-本機語法與離線測試指令（原始檔完整性則需另以 SHA256 對照 log）：
-
-```bash
-python -m unittest discover -s tests -v
-python -m compileall -q scripts tests
-bash -n scripts/persist_snapshots.sh
-actionlint .github/workflows/collect_taoyuan.yml .github/workflows/collect_tdx.yml
-```
-
 測試使用假資料、暫存目錄與模擬時鐘，不需 Secrets，也不建立研究 raw。測試覆蓋日期邊界、HTML／空回應、retry、檔案不覆寫、原始 bytes／SHA256、分頁與憑證不洩漏。正式執行入口：`python scripts/collect_taoyuan.py` 與 `python scripts/collect_tdx.py`。
 
 ## 研究解讀限制

@@ -59,3 +59,7 @@ python -B scripts/collect_flightforecast.py --current-only \
 - 新預報表 job `8739783`：enabled=true、Asia/Taipei、minute=12、expiresAt=20261106020000，均已直接讀回。下一次定時為 2026-10-28 16:12 +08:00；本次驗收是 manual run，尚未把未來定時執行當成已成功。
 - 本機 staging 6 檔成功後，重跑全部 unchanged；6 項 forecast/scheduler 範圍檢查及 4 項既有桃園 scheduler regression checks 通過。
 - 本機證據：`1007/flightforecast_integration/qa/github_raw_acceptance.json`、`cloud_acceptance_events.json`。
+
+## 2026-10-31：單一外部排程
+
+保留 `Taoyuan flightforecast hourly` 每小時 :12 的 cron-job.org job，GitHub workflow 每次收集預報表，並在台北時間 00、06、12、18 時加收桃園航班 raw；最後補抓為 11/6 00:12，截止仍為 02:00。手動驗證可選 `force_taoyuan=true`。排程是依 workflow 實際啟動時的小時判斷；若延遲跨越整點可能漏掉該次航班快照，應查看 logs。排程整合前應先驗證一次手動執行，再停用原 October、November、final jobs；不要刪除歷史 raw。

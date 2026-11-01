@@ -1,0 +1,353 @@
+{
+  "description": "User-provided supplemental airport flight snapshots obtained from another collector; originals preserved byte-for-byte. Source confirmation was provided by user; independent provenance and collection time were not verified.",
+  "encoding": "UTF-8 for valid files",
+  "filename_timestamp": "As provided; timezone and actual collection time unverified",
+  "files": [
+    {
+      "original_filename": "flight_20260923_1943.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260923_1943.txt",
+      "bytes": 647670,
+      "sha256": "d8493062b66ec17e6fe45c052b154d8313cd44fac26d19ec7600d8dd605c2757",
+      "status": "valid",
+      "reason": null,
+      "rows": 3873,
+      "arrivals": 1939,
+      "departures": 1934
+    },
+    {
+      "original_filename": "flight_20260923_2117.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260923_2117.txt",
+      "bytes": 647796,
+      "sha256": "9713240aafbd32d3808ede21397a0f184629043eac86a518571cee4ce7f8f8dc",
+      "status": "valid",
+      "reason": null,
+      "rows": 3873,
+      "arrivals": 1939,
+      "departures": 1934
+    },
+    {
+      "original_filename": "flight_20260923_2121.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260923_2121.txt",
+      "bytes": 647802,
+      "sha256": "6c57c10ce8a95e66d9ca779296b4aeed48747af4349725aef101fa192f5e1f6d",
+      "status": "valid",
+      "reason": null,
+      "rows": 3873,
+      "arrivals": 1939,
+      "departures": 1934
+    },
+    {
+      "original_filename": "flight_20260923_2126.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260923_2126.txt",
+      "bytes": 647802,
+      "sha256": "6c57c10ce8a95e66d9ca779296b4aeed48747af4349725aef101fa192f5e1f6d",
+      "status": "valid",
+      "reason": null,
+      "rows": 3873,
+      "arrivals": 1939,
+      "departures": 1934
+    },
+    {
+      "original_filename": "flight_20260923_2257.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260923_2257.txt",
+      "bytes": 647764,
+      "sha256": "18d4d0a980b1ba15d0622b5cb2530ba6ec6847280ee6996af0a8c75323142d4a",
+      "status": "valid",
+      "reason": null,
+      "rows": 3872,
+      "arrivals": 1939,
+      "departures": 1933
+    },
+    {
+      "original_filename": "flight_20260924_0150.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260924_0150.txt",
+      "bytes": 650424,
+      "sha256": "0fe95199c2a7a54ae651653031e8bc4e2513099979247694ea5193cc1e8bf2f3",
+      "status": "valid",
+      "reason": null,
+      "rows": 3894,
+      "arrivals": 1954,
+      "departures": 1940
+    },
+    {
+      "original_filename": "flight_20260924_2134.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260924_2134.txt",
+      "bytes": 652549,
+      "sha256": "b7ed4aee48ac9a1adfc9815a1dd9defd8f2f53a3b1466f68ef0bb55a43fcfaa2",
+      "status": "valid",
+      "reason": null,
+      "rows": 3900,
+      "arrivals": 1958,
+      "departures": 1942
+    },
+    {
+      "original_filename": "flight_20260926_1951.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260926_1951.txt",
+      "bytes": 655590,
+      "sha256": "1da494d9a69c865f68e3c9106538fac7aad3faf14cef92e808268cb18a5c04c4",
+      "status": "valid",
+      "reason": null,
+      "rows": 3917,
+      "arrivals": 1965,
+      "departures": 1952
+    },
+    {
+      "original_filename": "flight_20260926_2021.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260926_2021.txt",
+      "bytes": 655610,
+      "sha256": "2b807439508e4d75abcb79120b4bca9b35181eb1ceb66108fa0fcbb66f74c0dc",
+      "status": "valid",
+      "reason": null,
+      "rows": 3917,
+      "arrivals": 1965,
+      "departures": 1952
+    },
+    {
+      "original_filename": "flight_20260926_2057.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260926_2057.txt",
+      "bytes": 655678,
+      "sha256": "9f25cf46d8e2256960c2b371158ed126f5759bd771d6b7513d2c79e662defbd8",
+      "status": "valid",
+      "reason": null,
+      "rows": 3917,
+      "arrivals": 1965,
+      "departures": 1952
+    },
+    {
+      "original_filename": "flight_20260927_0515.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260927_0515.txt",
+      "bytes": 647911,
+      "sha256": "e020ea3f2bc76d710c4a52b7a349ccd707fb2abce4766cda75eb9fb929714392",
+      "status": "valid",
+      "reason": null,
+      "rows": 3879,
+      "arrivals": 1944,
+      "departures": 1935
+    },
+    {
+      "original_filename": "flight_20260927_1950.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260927_1950.txt",
+      "bytes": 648867,
+      "sha256": "244f1b0767af860c74794d28c31691217ff710ac9a7b31f1d13082da4991b7c2",
+      "status": "valid",
+      "reason": null,
+      "rows": 3878,
+      "arrivals": 1943,
+      "departures": 1935
+    },
+    {
+      "original_filename": "flight_20260928_1255.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260928_1255.txt",
+      "bytes": 649496,
+      "sha256": "0a5f1a4aca14ffe37223dadb744f05debba9e32ef6f82ab300f0ee205be6d791",
+      "status": "valid",
+      "reason": null,
+      "rows": 3886,
+      "arrivals": 1947,
+      "departures": 1939
+    },
+    {
+      "original_filename": "flight_20260929_0940.txt",
+      "path": "raw/taoyuan_supplemental/20261101/excluded/flight_20260929_0940.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "excluded",
+      "reason": "empty file"
+    },
+    {
+      "original_filename": "flight_20260929_0957.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_0957.txt",
+      "bytes": 637225,
+      "sha256": "347d292c0f40b88a2685fdc6590785de096377c72317aec12a139667a8b57ab5",
+      "status": "valid",
+      "reason": null,
+      "rows": 3815,
+      "arrivals": 1910,
+      "departures": 1905
+    },
+    {
+      "original_filename": "flight_20260929_1057.txt",
+      "path": "raw/taoyuan_supplemental/20261101/excluded/flight_20260929_1057.txt",
+      "bytes": 7412,
+      "sha256": "8bf26918c879abb8c5edec0605829f00fcd886cd1dd669e9e6a7285e2f4e8426",
+      "status": "excluded",
+      "reason": "HTML error page, HTTP 522 shown"
+    },
+    {
+      "original_filename": "flight_20260929_1257.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_1257.txt",
+      "bytes": 637205,
+      "sha256": "4662cfb4bf3d9da8d73bece451ea03e06c48838565624b3d985dd0baf27ac0af",
+      "status": "valid",
+      "reason": null,
+      "rows": 3814,
+      "arrivals": 1910,
+      "departures": 1904
+    },
+    {
+      "original_filename": "flight_20260929_1357.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_1357.txt",
+      "bytes": 637291,
+      "sha256": "29319189b29b9b80a9a92c8f2bd94cdca77e780111224e5efe0bed45ccb6030f",
+      "status": "valid",
+      "reason": null,
+      "rows": 3814,
+      "arrivals": 1910,
+      "departures": 1904
+    },
+    {
+      "original_filename": "flight_20260929_1457.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_1457.txt",
+      "bytes": 637373,
+      "sha256": "840fe1d77ee20259605fdf7b90736a7e7fd4b75496ac0eb644172a5a77bddf3e",
+      "status": "valid",
+      "reason": null,
+      "rows": 3814,
+      "arrivals": 1910,
+      "departures": 1904
+    },
+    {
+      "original_filename": "flight_20260929_1557.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_1557.txt",
+      "bytes": 637660,
+      "sha256": "d222264e01900075e6313bf276253e0f32dab69c120477c1f11d415e6f81a554",
+      "status": "valid",
+      "reason": null,
+      "rows": 3815,
+      "arrivals": 1910,
+      "departures": 1905
+    },
+    {
+      "original_filename": "flight_20260929_1728.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_1728.txt",
+      "bytes": 639255,
+      "sha256": "05e1a342e7edbae89a6e12046ca7ea46d0df3b6fb744d94e13606c85a4e507fe",
+      "status": "valid",
+      "reason": null,
+      "rows": 3823,
+      "arrivals": 1914,
+      "departures": 1909
+    },
+    {
+      "original_filename": "flight_20260929_1800.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260929_1800.txt",
+      "bytes": 639277,
+      "sha256": "7b14d318d638ea99637bd6520e631de33baf8a9634c1b83e895fad46c824bec1",
+      "status": "valid",
+      "reason": null,
+      "rows": 3823,
+      "arrivals": 1914,
+      "departures": 1909
+    },
+    {
+      "original_filename": "flight_20260930_1059.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260930_1059.txt",
+      "bytes": 641627,
+      "sha256": "f1765089ba1fedf247d8c9cc4eac6a7738f5a51a05b46921721eee3117e48ab9",
+      "status": "valid",
+      "reason": null,
+      "rows": 3841,
+      "arrivals": 1917,
+      "departures": 1924
+    },
+    {
+      "original_filename": "flight_20260930_2223.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20260930_2223.txt",
+      "bytes": 589981,
+      "sha256": "dbcce0d0e07c5455143f95fbb9ba8bc003dc2c3cd22cde6fb1928630c8226d5a",
+      "status": "valid",
+      "reason": null,
+      "rows": 3844,
+      "arrivals": 1918,
+      "departures": 1926
+    },
+    {
+      "original_filename": "flight_20261001_1200.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261001_1200.txt",
+      "bytes": 593436,
+      "sha256": "0c05f1e97d6bac8b2a4cc24a8037fdcfc939d16a60f60db1cd7d4ee98ae24a38",
+      "status": "valid",
+      "reason": null,
+      "rows": 3865,
+      "arrivals": 1940,
+      "departures": 1925
+    },
+    {
+      "original_filename": "flight_20261003_1200.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261003_1200.txt",
+      "bytes": 598066,
+      "sha256": "bbbdab901f0ef86d726af1599f8e523dfa1eb885fb759e30fc2210f6975b3fef",
+      "status": "valid",
+      "reason": null,
+      "rows": 3894,
+      "arrivals": 1954,
+      "departures": 1940
+    },
+    {
+      "original_filename": "flight_20261004_1202.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261004_1202.txt",
+      "bytes": 592407,
+      "sha256": "bf517d61a63c1b0eb841e303fad4f99280ac3cb361e11a7c7bea8d6682872c20",
+      "status": "valid",
+      "reason": null,
+      "rows": 3859,
+      "arrivals": 1933,
+      "departures": 1926
+    },
+    {
+      "original_filename": "flight_20261005_1240.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261005_1240.txt",
+      "bytes": 592516,
+      "sha256": "cb680b3ca2cde1a32995ff42900f261293c4f9b52fda5362f4f90e354cf3cfde",
+      "status": "valid",
+      "reason": null,
+      "rows": 3860,
+      "arrivals": 1938,
+      "departures": 1922
+    },
+    {
+      "original_filename": "flight_20261009_1636.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261009_1636.txt",
+      "bytes": 657518,
+      "sha256": "9db82e541be2ebdcfa0e11174990bf54e9e926653346fcabd933063c43f4def8",
+      "status": "valid",
+      "reason": null,
+      "rows": 3931,
+      "arrivals": 1966,
+      "departures": 1965
+    },
+    {
+      "original_filename": "flight_20261010_1051.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261010_1051.txt",
+      "bytes": 659713,
+      "sha256": "3566c844ef24cdba036a1b59a3f6277e854e8434d4ec2604dc46c341db2b5072",
+      "status": "valid",
+      "reason": null,
+      "rows": 3946,
+      "arrivals": 1979,
+      "departures": 1967
+    },
+    {
+      "original_filename": "flight_20261011_0040.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261011_0040.txt",
+      "bytes": 651465,
+      "sha256": "ab1ed10a3fc0676cd625fecbccbdb5951305a644f690f707100573f9034ce759",
+      "status": "valid",
+      "reason": null,
+      "rows": 3900,
+      "arrivals": 1951,
+      "departures": 1949
+    },
+    {
+      "original_filename": "flight_20261011_1237.txt",
+      "path": "raw/taoyuan_supplemental/20261101/valid/flight_20261011_1237.txt",
+      "bytes": 651117,
+      "sha256": "89edf275e8f050b3790bec350513e572937aa4952dc1789eede0cb18f89b8cf7",
+      "status": "valid",
+      "reason": null,
+      "rows": 3896,
+      "arrivals": 1951,
+      "departures": 1945
+    }
+  ]
+}

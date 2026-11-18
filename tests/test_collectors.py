@@ -6,6 +6,7 @@ import http.client
 import io
 import json
 from pathlib import Path
+import runpy
 import sys
 import tempfile
 import unittest
@@ -14,6 +15,7 @@ import urllib.error
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import collection_common as common
+import collect_flightforecast as forecast
 import collect_taoyuan as taoyuan
 import collect_tdx as tdx
 
@@ -37,11 +39,9 @@ class CollectionTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
         self.addCleanup(self.temp.cleanup)
-        for target, value in [("collection_common.ROOT", self.root), ("collect_taoyuan.ROOT", self.root)]:
-            p = patch(target, value); p.start(); self.addCleanup(p.stop)
+        patch("collection_common.ROOT", self.root).start()
         self.clock = patch("collection_common.now", return_value=AT).start()
         self.addCleanup(patch.stopall)
-        patch("collect_taoyuan.now", return_value=AT).start()
         patch("collection_common.time.sleep").start()
         self.output = io.StringIO()
         redirect = contextlib.redirect_stdout(self.output); redirect.__enter__()
@@ -121,12 +121,33 @@ class CollectionTests(unittest.TestCase):
         with patch.object(common.OPENER,'open',return_value=response(headers={'Content-Encoding':'gzip'})):
             with self.assertRaises(common.CollectionError):common.request_bytes(taoyuan.SOURCE_URL,common.RunLog('taoyuan'))
 
-    def test_final_taoyuan_snapshot_is_only_saved_once(self):
-        patch('collect_taoyuan.now',return_value=common.RESEARCH_END).start()
-        common.atomic_new(self.root/f'raw/taoyuan/a_flight_{common.RESEARCH_END:%Y%m%d}_000700.txt',FEED)
-        with patch.object(common.OPENER,'open') as network:
-            self.assertEqual(common.run_collector('taoyuan',taoyuan.collect),0)
-        network.assert_not_called()
+    def test_taoyuan_entry_point_saves_after_former_study_deadline(self):
+        at = datetime(2027, 1, 1, tzinfo=common.TZ)
+        self.clock.return_value = at
+        old_snapshot = self.root / 'raw/taoyuan/a_flight_20261106_000700.txt'
+        common.atomic_new(old_snapshot, FEED)
+        with patch.object(common.OPENER, 'open', return_value=response()), self.assertRaises(SystemExit) as exit:
+            runpy.run_path(taoyuan.__file__, run_name='__main__')
+        self.assertEqual(exit.exception.code, 0)
+        fresh_snapshot = old_snapshot.with_name(f'a_flight_{at:%Y%m%d_%H%M%S}.txt')
+        self.assertEqual(fresh_snapshot.read_bytes(), FEED)
+        self.assertEqual(old_snapshot.read_bytes(), FEED)
+
+    def test_forecast_download_and_archive_after_former_study_deadline(self):
+        at = datetime(2027, 1, 1, tzinfo=common.TZ)
+        self.clock.return_value = at
+        item = {'url': 'https://www.taoyuan-airport.com/uploads/fos/2027_01_01.xls',
+                'date': '2027-01-01', 'variant': 'initial', 'format': 'xls'}
+        index, report = b'{"mock":"index"}', b'forecast workbook bytes'
+        with (patch.object(forecast, 'now', return_value=at),
+              patch.object(forecast, 'links', return_value=[item]),
+              patch.object(forecast, 'validate', return_value={}),
+              patch.object(common.OPENER, 'open', side_effect=[response(index), response(report)])):
+            self.assertEqual(forecast.main(['--output-root', str(self.root)]), 0)
+        report_dir = self.root / 'raw/taoyuan_forecast/2027-01-01/initial'
+        self.assertEqual([p.read_bytes() for p in report_dir.iterdir()], [report])
+        audit = next((self.root / 'logs/taoyuan_forecast').glob('*.json'))
+        self.assertTrue(json.loads(audit.read_text())['success'])
 
     def test_tdx_missing_secrets_fails_without_network(self):
         with patch.dict('os.environ',{},clear=True),patch.object(common.OPENER,'open') as network:

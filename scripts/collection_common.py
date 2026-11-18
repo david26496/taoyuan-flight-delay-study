@@ -66,11 +66,12 @@ def atomic_new(path, body):
         os.unlink(temporary)
 
 
-def save_snapshot(source, prefix, extension, body):
+def save_snapshot(source, prefix, extension, body, *, enforce_window=True):
     # Wait for an actual new second rather than inventing a filename timestamp.
     for _ in range(4):
         at = now()
-        check_window()
+        if enforce_window:
+            check_window()
         path = ROOT / "raw" / source / f"{prefix}_{at:%Y%m%d_%H%M%S}.{extension}"
         try:
             atomic_new(path, body)
@@ -107,11 +108,12 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 OPENER = urllib.request.build_opener(NoRedirect())
 
 
-def request_bytes(url, log, *, data=None, headers=None, sensitive=False):
+def request_bytes(url, log, *, data=None, headers=None, sensitive=False, enforce_window=True):
     request_headers = {"User-Agent": "tpe-arrival-research/1.0",
                        "Accept-Encoding": "identity", **(headers or {})}
     for attempt in range(1, MAX_ATTEMPTS + 1):
-        check_window()
+        if enforce_window:
+            check_window()
         started = now().isoformat()
         status, body, response_headers, error = None, None, {}, None
         transport_error = False
@@ -183,8 +185,8 @@ def reject_empty_or_html(body, headers):
         raise CollectionError("HTML page rejected")
 
 
-def run_collector(source, collect):
-    if not in_window(now()):
+def run_collector(source, collect, *, enforce_window=True):
+    if enforce_window and not in_window(now()):
         print(f"SKIPPED: outside {START.isoformat()} through {END.isoformat()}")
         return 0  # no credentials, HTTP, log directories or raw files
     log = RunLog(source)

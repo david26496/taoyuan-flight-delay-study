@@ -1,6 +1,13 @@
 name: Collect Taoyuan flights and hourly passenger forecasts
 
 on:
+  schedule:
+    # At 00:12, 06:12, 12:12 and 18:12 Taipei, archive the flight feed as well.
+    - cron: '12 4,10,16,22 * * *'
+    - cron: '12 0-3,5-9,11-15,17-21,23 * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/collect_flightforecast.yml']
   workflow_dispatch:
     inputs:
       force_taoyuan:
@@ -19,7 +26,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: taoyuan-flightforecast
+  group: flight-research-data-writer
   cancel-in-progress: false
 
 jobs:
@@ -39,6 +46,7 @@ jobs:
           python-version: '3.12'
       - name: Decide whether airport snapshot is due
         id: due
+        if: github.event_name == 'workflow_dispatch'
         env:
           FORCE_TAOYUAN: ${{ inputs.force_taoyuan || false }}
         run: python -B scripts/flight_snapshot_due.py
@@ -56,7 +64,9 @@ jobs:
         run: bash scripts/persist_forecast.sh taoyuan_forecast
       - name: Collect airport flight snapshot
         id: flight_collect
-        if: ${{ always() && !cancelled() && steps.due.outputs.due == 'true' }}
+        if: >-
+          ${{ always() && !cancelled() && (github.event_name == 'push' ||
+              github.event.schedule == '12 4,10,16,22 * * *' || steps.due.outputs.due == 'true') }}
         env:
           COLLECTION_TRIGGER: ${{ inputs.trigger_source || github.event_name }}
         run: python -B scripts/collect_taoyuan.py

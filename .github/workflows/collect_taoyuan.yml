@@ -1,10 +1,6 @@
 name: Collect Taoyuan flight snapshots
 
 on:
-  schedule:
-    # UTC -> Asia/Taipei: 00:07, 06:07, 12:07, 18:07.
-    # November 6 00:07 is the supplementary run; Python gates the year/window.
-    - cron: '7 4,10,16,22 * * *'
   workflow_dispatch:
     inputs:
       trigger_source:
@@ -24,7 +20,7 @@ concurrency:
 
 jobs:
   collect:
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && (github.event_name != 'schedule' || vars.EXTERNAL_SCHEDULER_ACTIVE != 'true')
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:

@@ -3,7 +3,7 @@ import hashlib
 import re
 import sys
 from collection_common import (
-    ROOT, RESEARCH_END, CollectionError, now, reject_empty_or_html,
+    CollectionError, reject_empty_or_html,
     request_bytes, run_collector, save_snapshot,
 )
 
@@ -19,12 +19,9 @@ def validate(body, headers):
 
 
 def collect(log):
-    if now() >= RESEARCH_END and any((ROOT / "raw" / "taoyuan").glob(f"a_flight_{RESEARCH_END:%Y%m%d}_*.txt")):
-        print("SKIPPED: supplementary snapshot already exists for current study")
-        return False
-    body, headers = request_bytes(SOURCE_URL, log)
+    body, headers = request_bytes(SOURCE_URL, log, enforce_window=False)
     validate(body, headers)
-    path, collected_at = save_snapshot("taoyuan", "a_flight", "txt", body)
+    path, collected_at = save_snapshot("taoyuan", "a_flight", "txt", body, enforce_window=False)
     log.snapshots.append(path)
     log.emit("snapshot_saved", source_url=SOURCE_URL, http_status=200,
              collected_at=collected_at, path=path, response_size=len(body),
@@ -32,4 +29,4 @@ def collect(log):
 
 
 if __name__ == "__main__":
-    sys.exit(run_collector("taoyuan", collect))
+    sys.exit(run_collector("taoyuan", collect, enforce_window=False))

@@ -12,15 +12,12 @@
 
 ## 自動流程
 
-`Collect Taoyuan hourly passenger forecasts` → 原始清單 → XLS/ODS 驗證 → immutable raw + JSON audit → scoped commit/push。
+`Collect Taoyuan flights and hourly passenger forecasts` 下載原始清單，驗證 XLS/ODS 後提交原始檔與 JSON 採集紀錄。
 
-- 手動：GitHub Actions → 選擇 workflow → Run workflow。
-- 定時：cron-job.org 一個 `Taoyuan flightforecast hourly [david26496/taoyuan-flight-delay-study]` job，每小時 **:12，Asia/Taipei**。
-- 沿用既有研究截止：**2026-11-06 02:00 +08:00**，最後正常 hourly trigger 為 **11/6 01:12**。本次不延長既有 study window。
-- 桃園 `a_flight_v4.txt` 原有 A+D collector 與 :07 排程保留。
-- `Configure active collection sources` 的 `apply`：停用同 repository 的所有 TDX cron jobs（包含十一月），建立或更新唯一 forecast job。`status` 僅讀回設定與最近狀態。
-- 使用既有 `CRON_JOB_API_KEY` / `SCHEDULER_GITHUB_TOKEN`，無新 Secret，TDX Secrets 不再被新流程使用。
-- TDX workflows 另以 disabled 狀態與 job-level false guard 停止；舊 provision 已移除 TDX specs，舊 TDX repair entrypoint 也拒絕執行，避免誤重新啟用。
+- GitHub Actions 每小時 **:12（台北時間）**擷取預報表，並在 **00:12、06:12、12:12、18:12** 的排程額外擷取 `a_flight_v4.txt` 航班快照。航班快照依觸發的 cron 規則決定是否採集，以實際採集時間命名。
+- 兩個來源持續採集，無固定截止日。原生 GitHub 排程不需要 cron-job.org 或長期 GitHub token。
+- 手動執行時，可選 `force_taoyuan=true` 同時收集航班快照。獨立的 `Collect Taoyuan flight snapshots` 工作流程也可手動執行。
+- `main` 上的採集工作流程檔有變更時，會觸發一次採集，驗證兩個來源。
 
 ## 保存位置與版本
 
@@ -49,7 +46,7 @@ python -B scripts/collect_flightforecast.py --current-only \
 
 ## Git 安全
 
-獨立 forecast concurrency group，cancel-in-progress=false；只 add `raw/taoyuan_forecast/`、`logs/taoyuan_forecast/` 新檔。Push 前 fetch/rebase，最多四次安全重試，無 force push；失敗時 recovery artifact 保留原始證據。與既有桃園 raw collector 的資料路徑互不覆蓋。
+兩個航班採集工作流程共用 concurrency group，既有執行中的工作會繼續跑。每個來源只提交對應的 `raw/`、`logs/` 新檔。Push 衝突時 fetch/rebase，最多四次推送；失敗時 recovery artifact 保留原始檔與採集紀錄。
 
 ## 2026-10-28 首次部署驗收
 
@@ -60,6 +57,6 @@ python -B scripts/collect_flightforecast.py --current-only \
 - 本機 staging 6 檔成功後，重跑全部 unchanged；6 項 forecast/scheduler 範圍檢查及 4 項既有桃園 scheduler regression checks 通過。
 - 本機證據：`1007/flightforecast_integration/qa/github_raw_acceptance.json`、`cloud_acceptance_events.json`。
 
-## 2026-10-31：單一外部排程
+## 2026-10-31：單一外部排程（歷史紀錄）
 
 保留 `Taoyuan flightforecast hourly` 每小時 :12 的 cron-job.org job，GitHub workflow 每次收集預報表，並在台北時間 00、06、12、18 時加收桃園航班 raw；最後補抓為 11/6 00:12，截止仍為 02:00。手動驗證可選 `force_taoyuan=true`。排程是依 workflow 實際啟動時的小時判斷；若延遲跨越整點可能漏掉該次航班快照，應查看 logs。排程整合前應先驗證一次手動執行，再停用原 October、November、final jobs；不要刪除歷史 raw。

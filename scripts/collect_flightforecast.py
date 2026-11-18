@@ -11,7 +11,7 @@ import uuid
 import xml.etree.ElementTree as ET
 import zipfile
 from urllib.parse import urlsplit
-from collection_common import ROOT, END, CollectionError, atomic_new, in_window, now, request_bytes, reject_empty_or_html
+from collection_common import ROOT, CollectionError, atomic_new, now, request_bytes, reject_empty_or_html
 
 PAGE = 'https://www.taoyuanairport.com.tw/flightforecast'
 INDEX = 'https://www.taoyuanairport.com.tw/api/api/thirdparty/fos'
@@ -121,8 +121,8 @@ def main(argv=None):
     p.add_argument('--current-only',action='store_true',help='Staging smoke test: today and tomorrow only')
     args=p.parse_args(argv);audit=Audit(args.output_root.resolve())
     try:
-        if not in_window(now()):raise CollectionError('outside existing study window, ending '+END.isoformat())
-        body,headers=request_bytes(INDEX,audit,headers={'Referer':PAGE,'Accept':'application/json'})
+        body,headers=request_bytes(INDEX,audit,headers={'Referer':PAGE,'Accept':'application/json'},
+                                   enforce_window=False)
         reject_empty_or_html(body,headers);items=links(body)
         digest=hashlib.sha256(body).hexdigest()
         audit.emit('index_saved',raw_file_path=(RAW/'index'/f'{digest}.json').as_posix(),sha256=digest,
@@ -135,7 +135,7 @@ def main(argv=None):
             if cached and not args.refresh_history and item['date']<(today-timedelta(days=1)).isoformat():
                 audit.files.append(dict(**item,result='historical_cached',raw_file_paths=[x.relative_to(audit.root).as_posix() for x in cached]));continue
             try:
-                original,h=request_bytes(item['url'],audit,headers={'Referer':PAGE})
+                original,h=request_bytes(item['url'],audit,headers={'Referer':PAGE},enforce_window=False)
                 meta=validate(original,h,item);sha=hashlib.sha256(original).hexdigest()
                 relative=folder/f'{stem}__{sha}.{item["format"]}'
                 result=publish(audit.root,relative,original)

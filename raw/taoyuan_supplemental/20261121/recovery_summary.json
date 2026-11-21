@@ -1,0 +1,59 @@
+{
+  "status": "DATA_RECOVERY_COMPLETE_MODELS_NOT_RETRAINED",
+  "dates": [
+    {
+      "date": "2026-10-01",
+      "previous_candidates": 1097,
+      "recovered_candidates": 685,
+      "new_listing_keys": 0,
+      "old_unknown": 839,
+      "old_unknown_now_completed": 825,
+      "old_unknown_now_cancelled": 2,
+      "status_counts": {
+        "COMPLETED": 671,
+        "UNKNOWN_FINAL_STATUS": 12,
+        "CANCELLED": 2
+      },
+      "prior_allocation_rows": 251,
+      "new_allocation_rows": 617,
+      "aircraft_conflicts": 0,
+      "time_conflicts": 1
+    },
+    {
+      "date": "2026-10-02",
+      "previous_candidates": 721,
+      "recovered_candidates": 725,
+      "new_listing_keys": 4,
+      "old_unknown": 16,
+      "old_unknown_now_completed": 0,
+      "old_unknown_now_cancelled": 0,
+      "status_counts": {
+        "COMPLETED": 672,
+        "CANCELLED": 33,
+        "UNKNOWN_FINAL_STATUS": 20
+      },
+      "prior_allocation_rows": 654,
+      "new_allocation_rows": 655,
+      "aircraft_conflicts": 0,
+      "time_conflicts": 0
+    }
+  ],
+  "total_previous_candidates": 21504,
+  "total_recovered_candidates": 21096,
+  "previous_allocation_rows": 17707,
+  "new_allocation_rows": 18074,
+  "thresholds": {
+    "30": 144.40515416,
+    "40": 157.26390647,
+    "50": 175.22024367,
+    "60": 196.73383169,
+    "70": 224.22172066
+  },
+  "mapped_observations": 5193,
+  "quarantined_observations": 19,
+  "ambiguous_listing_keys": 10,
+  "accepted_new_group_merges": 247,
+  "incomplete_clique_components": 0,
+  "models_retrained": false,
+  "new_model_scores_claimed": false
+}

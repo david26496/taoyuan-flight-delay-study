@@ -1,0 +1,123 @@
+{
+  "archived_date": "2026-11-21",
+  "source_basename": "即時航班觀測_2026-09-22至2026-10-13.csv",
+  "source_sha256": "6aa9b04a1b7172734baeeeb75966c30f9717dbb60c6ea924dd567dd5498e6a93",
+  "source_total_rows": 42513,
+  "selected_service_dates": [
+    "2026-10-01",
+    "2026-10-02"
+  ],
+  "selected_rows": 5212,
+  "schema": [
+    "snapshot_id",
+    "collected_at",
+    "terminal",
+    "direction",
+    "airline_code",
+    "airline_zh",
+    "flight_number",
+    "gate",
+    "scheduled_date",
+    "scheduled_time",
+    "estimated_date",
+    "estimated_time",
+    "other_airport_code",
+    "other_airport_en",
+    "other_airport_zh",
+    "flight_status",
+    "aircraft_type",
+    "via_airport_code",
+    "via_airport_en",
+    "via_airport_zh",
+    "baggage_carousel",
+    "check_in_counter",
+    "package_source_file"
+  ],
+  "files": [
+    {
+      "path": "observations/observations_2026-10-01_20261001T010152456345+0800.csv.gz",
+      "service_date": "2026-10-01",
+      "snapshot_id": "20261001T010152456345+0800",
+      "collected_at_field": "2026-10-01T01:01:52.456345+08:00",
+      "rows": 1305,
+      "gzip_sha256": "fdd2273bc04e2a9e8a88cff0b08b3fed67f6816bd9d23fc21da7969b23e181ce",
+      "csv_sha256": "c7bfc04c0e6013a066996fe0fb57578837e878953407e338b33289d4e2ac308b",
+      "source_record_ranges": [
+        [
+          22584,
+          23233
+        ],
+        [
+          24517,
+          25171
+        ]
+      ],
+      "record_bytes_preserved": true
+    },
+    {
+      "path": "observations/observations_2026-10-01_20261002T220031376958+0800.csv.gz",
+      "service_date": "2026-10-01",
+      "snapshot_id": "20261002T220031376958+0800",
+      "collected_at_field": "2026-10-02T22:00:31.376958+08:00",
+      "rows": 1301,
+      "gzip_sha256": "b9bac90450d673c1a276b32fb64a029bfe8d3780b2b2a274803b7e97ed5120ec",
+      "csv_sha256": "eb630621ccb6fb6802e43a60fef47ccf03a3c5035bc060236d8706d13a6af453",
+      "source_record_ranges": [
+        [
+          25813,
+          26458
+        ],
+        [
+          27755,
+          28409
+        ]
+      ],
+      "record_bytes_preserved": true
+    },
+    {
+      "path": "observations/observations_2026-10-02_20261001T010152456345+0800.csv.gz",
+      "service_date": "2026-10-02",
+      "snapshot_id": "20261001T010152456345+0800",
+      "collected_at_field": "2026-10-01T01:01:52.456345+08:00",
+      "rows": 1299,
+      "gzip_sha256": "47f32eccbc48b6c2ca809ed9c2a178e58ee3f8fdcd5cf8426a58220a61e7320b",
+      "csv_sha256": "aac7dbbc4f0102fe840f689ac7b815af2f80535ee3d7b0a9ca54f9955cc38b67",
+      "source_record_ranges": [
+        [
+          23234,
+          23891
+        ],
+        [
+          25172,
+          25812
+        ]
+      ],
+      "record_bytes_preserved": true
+    },
+    {
+      "path": "observations/observations_2026-10-02_20261002T220031376958+0800.csv.gz",
+      "service_date": "2026-10-02",
+      "snapshot_id": "20261002T220031376958+0800",
+      "collected_at_field": "2026-10-02T22:00:31.376958+08:00",
+      "rows": 1307,
+      "gzip_sha256": "a71b5de1d6fd4eb80a41ed0f84c9fb0ab2b158e15bc6f298e8ebd6ae67102381",
+      "csv_sha256": "a4d7ffffb7e86c34f3a961dd1741ce3e5554e064a53c62f6ecbe465183562dcf",
+      "source_record_ranges": [
+        [
+          26459,
+          27119
+        ],
+        [
+          28410,
+          29055
+        ]
+      ],
+      "record_bytes_preserved": true
+    }
+  ],
+  "source_type": "USER_PROVIDED_AGGREGATED_OBSERVATION_CSV",
+  "source_record_numbering": "1-based data records excluding header",
+  "collection_time_provenance": "CSV_FIELDS_NOT_INDEPENDENTLY_VERIFIED",
+  "not_original_http_response_bytes": true,
+  "collector_logs_fabricated": false
+}

@@ -1,0 +1,286 @@
+{
+  "source_archive_name": "給陳宇辰.zip",
+  "source_archive_sha256": "92b46b9e356d2826e23fefe2704acb0e346c9895e5cacdfa21fb56d91e16bb52",
+  "source_trust": "USER_CONFIRMED_TRUSTED",
+  "research_use_authorized": true,
+  "original_bytes_preserved": true,
+  "collection_timestamp_evidence": "original filename; not independently corroborated by acquisition logs",
+  "files": [
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261104T000003+0800.txt",
+      "archive_member": "passenger_flights_20261104T000003+0800.txt",
+      "size": 533209,
+      "sha256": "c15df0f573757e837ecc4c09e6177e444c2fce2a0b30e9fbf335b7bf06588da1",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3684,
+      "scheduled_date_counts": {
+        "2026-11-02": 1224,
+        "2026-11-03": 1261,
+        "2026-11-04": 1199
+      },
+      "nominal_snapshot_time": "20261104T000003+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261105T001430+0800.txt",
+      "archive_member": "passenger_flights_20261105T001430+0800.txt",
+      "size": 538147,
+      "sha256": "6c4aefc324f353c41119adf3d58167eed70f0277f7eb00cd25790858f5cace8e",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3716,
+      "scheduled_date_counts": {
+        "2026-11-04": 1200,
+        "2026-11-05": 1268,
+        "2026-11-06": 1248
+      },
+      "nominal_snapshot_time": "20261105T001430+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261106T001212+0800.txt",
+      "archive_member": "passenger_flights_20261106T001212+0800.txt",
+      "size": 545252,
+      "sha256": "2a9521c8132eb45f9bc03b0ec9b1236a4122ac78bcf0e94e53e45a1b796c9129",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3765,
+      "scheduled_date_counts": {
+        "2026-11-05": 1261,
+        "2026-11-06": 1252,
+        "2026-11-07": 1252
+      },
+      "nominal_snapshot_time": "20261106T001212+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261107T000943+0800.txt",
+      "archive_member": "passenger_flights_20261107T000943+0800.txt",
+      "size": 552697,
+      "sha256": "92242994de422128a2ab726a64cfcf548590b95fa8d9c12c51a4bda2b2ab694d",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3814,
+      "scheduled_date_counts": {
+        "2026-11-06": 1251,
+        "2026-11-07": 1252,
+        "2026-11-08": 1311
+      },
+      "nominal_snapshot_time": "20261107T000943+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261108T001405+0800.txt",
+      "archive_member": "passenger_flights_20261108T001405+0800.txt",
+      "size": 546031,
+      "sha256": "9803e1cbfe54c7fa8e860e1bb1297f19629ffee65398e3489219ec7a9d6d38a0",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3770,
+      "scheduled_date_counts": {
+        "2026-11-07": 1252,
+        "2026-11-08": 1255,
+        "2026-11-09": 1263
+      },
+      "nominal_snapshot_time": "20261108T001405+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261109T001428+0800.txt",
+      "archive_member": "passenger_flights_20261109T001428+0800.txt",
+      "size": 541559,
+      "sha256": "fd29cd8c9fd665faaa15a99a2c89e4448cdfc54eaf58cb9275282692501e08e8",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3741,
+      "scheduled_date_counts": {
+        "2026-11-08": 1255,
+        "2026-11-09": 1234,
+        "2026-11-10": 1252
+      },
+      "nominal_snapshot_time": "20261109T001428+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261110T001052+0800.txt",
+      "archive_member": "passenger_flights_20261110T001052+0800.txt",
+      "size": 534543,
+      "sha256": "36f8f32950fd8de76df11b8c7231f95e49cf042ca07ba7fbe43fc8c125a6ad6c",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3693,
+      "scheduled_date_counts": {
+        "2026-11-09": 1234,
+        "2026-11-10": 1252,
+        "2026-11-11": 1207
+      },
+      "nominal_snapshot_time": "20261110T001052+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261111T000026+0800.txt",
+      "archive_member": "passenger_flights_20261111T000026+0800.txt",
+      "size": 534396,
+      "sha256": "6624adb4b405a7798a7aa71351f64832ca419cc3e12dbd8637866bd25e0f1655",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3692,
+      "scheduled_date_counts": {
+        "2026-11-09": 1234,
+        "2026-11-10": 1250,
+        "2026-11-11": 1208
+      },
+      "nominal_snapshot_time": "20261111T000026+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261112T001553+0800.txt",
+      "archive_member": "passenger_flights_20261112T001553+0800.txt",
+      "size": 539734,
+      "sha256": "1b0de36dddc9289e57cf7a728027c672a7b9522f7e7ae3a3b7e92be250793971",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3727,
+      "scheduled_date_counts": {
+        "2026-11-11": 1208,
+        "2026-11-12": 1263,
+        "2026-11-13": 1256
+      },
+      "nominal_snapshot_time": "20261112T001553+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261113T000005+0800.txt",
+      "archive_member": "passenger_flights_20261113T000005+0800.txt",
+      "size": 539734,
+      "sha256": "f94026c9c2de1e3504e0eb9db252339178c04ae39bcf6bde4c78df426c841449",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3727,
+      "scheduled_date_counts": {
+        "2026-11-11": 1208,
+        "2026-11-12": 1262,
+        "2026-11-13": 1257
+      },
+      "nominal_snapshot_time": "20261113T000005+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261114T000504+0800.txt",
+      "archive_member": "passenger_flights_20261114T000504+0800.txt",
+      "size": 546568,
+      "sha256": "bd69d0677988cef4364d296d821fd97c7da7e3ce792aeaa7a6c10ca8138b8a46",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3774,
+      "scheduled_date_counts": {
+        "2026-11-12": 1262,
+        "2026-11-13": 1257,
+        "2026-11-14": 1255
+      },
+      "nominal_snapshot_time": "20261114T000504+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261115T001247+0800.txt",
+      "archive_member": "passenger_flights_20261115T001247+0800.txt",
+      "size": 543974,
+      "sha256": "588652c5c68e7cf4d58598b57f41974f6bc8ec0f2f0e634a730f99b01bf4b4e4",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3757,
+      "scheduled_date_counts": {
+        "2026-11-14": 1255,
+        "2026-11-15": 1263,
+        "2026-11-16": 1239
+      },
+      "nominal_snapshot_time": "20261115T001247+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261116T000402+0800.txt",
+      "archive_member": "passenger_flights_20261116T000402+0800.txt",
+      "size": 543974,
+      "sha256": "275ec5c404b4dae6d0d9193274d8aa38fb62b193bde615205261213e104b6aad",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3757,
+      "scheduled_date_counts": {
+        "2026-11-14": 1255,
+        "2026-11-15": 1262,
+        "2026-11-16": 1240
+      },
+      "nominal_snapshot_time": "20261116T000402+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261117T000913+0800.txt",
+      "archive_member": "passenger_flights_20261117T000913+0800.txt",
+      "size": 537101,
+      "sha256": "913b499c59c025390a1496388e8060a5e9e614ca7ef7b337df635e98dee0b8e2",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3711,
+      "scheduled_date_counts": {
+        "2026-11-16": 1239,
+        "2026-11-17": 1261,
+        "2026-11-18": 1211
+      },
+      "nominal_snapshot_time": "20261117T000913+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261118T001120+0800.txt",
+      "archive_member": "passenger_flights_20261118T001120+0800.txt",
+      "size": 540444,
+      "sha256": "6afbc897ed2605840ed7957bd2cb9c24c7becea35499027443f4c037087baab2",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3735,
+      "scheduled_date_counts": {
+        "2026-11-17": 1261,
+        "2026-11-18": 1209,
+        "2026-11-19": 1265
+      },
+      "nominal_snapshot_time": "20261118T001120+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    },
+    {
+      "path": "raw/taoyuan_supplemental/20261127/valid/passenger_flights_20261119T000104+0800.txt",
+      "archive_member": "passenger_flights_20261119T000104+0800.txt",
+      "size": 543134,
+      "sha256": "47f12fc2aa304334748b2fc364c90fd549170488399cb4fb7782ab008498b4c2",
+      "encoding": "CP950",
+      "columns": 20,
+      "observations": 3737,
+      "scheduled_date_counts": {
+        "2026-11-17": 1261,
+        "2026-11-18": 1211,
+        "2026-11-19": 1265
+      },
+      "nominal_snapshot_time": "20261119T000104+0800",
+      "source_trust": "USER_CONFIRMED_TRUSTED",
+      "collection_log_verified": false
+    }
+  ],
+  "snapshots": 16,
+  "observations": 59800,
+  "unique_content": 16,
+  "missing_requested_scheduled_dates": []
+}

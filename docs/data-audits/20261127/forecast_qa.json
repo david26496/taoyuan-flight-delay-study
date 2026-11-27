@@ -1,0 +1,36 @@
+{
+  "base_commit": "29f12af4eb0bd70878557352a196bdfc5c96d8cc",
+  "audit_date": "2026-11-27",
+  "checked_report_dates": [
+    "2026-09-14",
+    "2026-11-28"
+  ],
+  "validated_files": 892,
+  "invalid_files": [],
+  "missing_daily_initial": [],
+  "missing_daily_hourly": [],
+  "requested_window": [
+    "2026-11-05",
+    "2026-11-18"
+  ],
+  "requested_missing_initial": [],
+  "requested_missing_hourly": [],
+  "requested_collection_hour_counts": {
+    "2026-11-05": 23,
+    "2026-11-06": 1,
+    "2026-11-07": 0,
+    "2026-11-08": 0,
+    "2026-11-09": 0,
+    "2026-11-10": 0,
+    "2026-11-11": 0,
+    "2026-11-12": 0,
+    "2026-11-13": 0,
+    "2026-11-14": 0,
+    "2026-11-15": 0,
+    "2026-11-16": 0,
+    "2026-11-17": 0,
+    "2026-11-18": 1
+  },
+  "daily_tables_are_not_proof_of_every_hour_snapshot": true,
+  "nov27_incomplete_calendar_day": true
+}

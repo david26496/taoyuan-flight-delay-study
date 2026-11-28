@@ -1,0 +1,1 @@
+{"collected_at": "2026-11-28T20:12:31.331958+08:00", "event": "collection_complete", "github_run_attempt": "1", "github_run_id": "46143473189", "run_id": "ff7ca6e977cb4bc5b3455e4c2800fd7c", "snapshots": ["raw/taoyuan/a_flight_20261128_201231.txt.gz"], "source": "taoyuan", "trigger_source": "cron-job.org"}

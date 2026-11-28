@@ -1,13 +1,9 @@
-"""Retire TDX cron triggers and provision only the official forecast collector."""
+"""Retire TDX cron triggers and provision the ongoing hourly collector."""
 import argparse
-import copy
 import json
 import os
 import time
-from datetime import datetime
-from zoneinfo import ZoneInfo
 from configure_external_scheduler import api, REPOSITORY
-from collection_common import END
 BASE='https://api.github.com/repos/'+REPOSITORY+'/actions/workflows/'
 TDX_URLS={BASE+'collect_tdx.yml/dispatches',BASE+'case2_tdx_departure.yml/dispatches'}
 TITLE='Taoyuan flightforecast hourly ['+REPOSITORY+']'
@@ -15,7 +11,7 @@ TITLE='Taoyuan flightforecast hourly ['+REPOSITORY+']'
 def desired_job(token):
     return {'title':TITLE,'url':BASE+'collect_flightforecast.yml/dispatches','enabled':True,
             'saveResponses':False,'requestMethod':1,'requestTimeout':30,'redirectSuccess':False,
-            'schedule':{'timezone':'Asia/Taipei','expiresAt':int(END.strftime('%Y%m%d%H%M%S')),
+            'schedule':{'timezone':'Asia/Taipei','expiresAt':0,
                         'hours':[-1],'minutes':[12],'mdays':[-1],'months':[-1],'wdays':[-1]},
             'extendedData':{'headers':{'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json',
                          'Content-Type':'application/json','X-GitHub-Api-Version':'2026-03-10'},
@@ -33,7 +29,7 @@ def main():
     if matches and (matches[0]['title']!=TITLE or matches[0]['url']!=desired['url']):
         raise RuntimeError('conflicting forecast job identity')
     if args.mode=='apply':
-        if not token or datetime.now(ZoneInfo('Asia/Taipei'))>=END:raise RuntimeError('missing scheduler credential or ended window')
+        if not token:raise RuntimeError('missing scheduler credential')
         # Pause all existing TDX jobs for this repository, including November jobs.
         for old in jobs:
             if old.get('url') not in TDX_URLS:continue

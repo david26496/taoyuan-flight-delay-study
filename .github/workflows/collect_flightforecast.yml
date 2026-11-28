@@ -2,9 +2,8 @@ name: Collect Taoyuan flights and hourly passenger forecasts
 
 on:
   schedule:
-    # Every hourly execution collects both the flight feed and forecasts.
-    - cron: '12 4,10,16,22 * * *'
-    - cron: '12 0-3,5-9,11-15,17-21,23 * * *'
+    # Fallback native schedule; primary hourly :12 triggers come from cron-job.org.
+    - cron: '12 * * * *'
   push:
     branches: [main]
     paths: ['.github/workflows/collect_flightforecast.yml']

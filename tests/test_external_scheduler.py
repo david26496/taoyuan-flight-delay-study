@@ -9,6 +9,7 @@ from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+import configure_collection_sources as sources
 import configure_external_scheduler as scheduler
 
 
@@ -49,6 +50,36 @@ class ExternalSchedulerTests(unittest.TestCase):
         self.assertNotIn('Authorization',output.getvalue())
         self.assertEqual(len(output.getvalue().splitlines()),3)
         self.assertNotIn('collect_tdx.yml',output.getvalue())
+
+    def test_collection_sources_job_has_no_expiration_and_applies(self):
+        desired = sources.desired_job('test-token')
+        self.assertEqual(desired['schedule']['expiresAt'], 0)
+        self.assertEqual(desired['schedule']['timezone'], 'Asia/Taipei')
+        self.assertEqual(desired['schedule']['hours'], [-1])
+        self.assertEqual(desired['schedule']['minutes'], [12])
+        self.assertTrue(desired['enabled'])
+
+        existing = {'jobId': 8739783, 'title': desired['title'], 'url': desired['url'], 'enabled': False}
+        calls = []
+        def fake_api(method, path, key, payload=None):
+            calls.append((method, path, payload))
+            if (method, path) == ('GET', '/jobs'):
+                return {'someFailed': False, 'jobs': [existing]}
+            if (method, path) == ('PATCH', '/jobs/8739783'):
+                return {}
+            if (method, path) == ('GET', '/jobs/8739783'):
+                return {'jobDetails': {**desired, 'jobId': 8739783, 'nextExecution': 1795774320}}
+            raise AssertionError(f'unexpected api call: {method} {path}')
+
+        output = io.StringIO()
+        with (patch.object(sys, 'argv', ['configure_collection_sources.py', 'apply']),
+              patch.object(sources, 'api', side_effect=fake_api),
+              patch.dict('os.environ', {'CRON_JOB_API_KEY': 'cron-key', 'SCHEDULER_GITHUB_TOKEN': 'test-token'}),
+              contextlib.redirect_stdout(output)):
+            sources.main()
+        self.assertIn(('PATCH', '/jobs/8739783', {'job': desired}), calls)
+        self.assertNotIn('test-token', output.getvalue())
+        self.assertNotIn('cron-key', output.getvalue())
 
 
 if __name__=='__main__':unittest.main()

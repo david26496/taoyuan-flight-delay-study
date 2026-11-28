@@ -15,7 +15,7 @@
 `Collect Taoyuan flights and hourly passenger forecasts` 下載原始清單，驗證 XLS/ODS 後提交原始檔與 JSON 採集紀錄。
 
 - GitHub Actions 每小時 **:12（台北時間）**擷取預報表與 `a_flight_v4.txt` 航班快照；實際執行可能延遲，以實際採集時間命名。航班快照以 `.txt.gz` 儲存，解壓後還原原始回應；既有自動收集 `.txt` 快照已轉為 `.txt.gz`，解壓內容逐位元一致；對照見 [轉換清單](data-audits/20261128-flight-gzip-migration.json)。歷史收集日誌仍保留原 `.txt` 路徑及原始內容雜湊，請透過清單對應壓縮後的路徑。補充來源資料維持原有格式。 採集日誌的 `sha256` 為壓縮檔雜湊，`source_sha256` 為原始回應雜湊。既有僅讀取 `.txt` 的分析工具需先解壓或增加 gzip 支援。
-- 兩個來源持續採集，無固定截止日。原生 GitHub 排程不需要 cron-job.org 或長期 GitHub token。
+- 兩個來源持續採集，無固定截止日。主要透過 `cron-job.org`（無到期日 `expiresAt=0`）於每小時 **:12（台北時間）** 呼叫 `workflow_dispatch` 觸發，並保留 GitHub Actions 原生 `12 * * * *` 排程作為備援。
 - 手動執行時也會同時收集航班快照（保留 `force_taoyuan` 選項以相容原有呼叫）。獨立的 `Collect Taoyuan flight snapshots` 工作流程也可手動執行。
 - `main` 上的採集工作流程檔有變更時，會觸發一次採集，驗證兩個來源。
 

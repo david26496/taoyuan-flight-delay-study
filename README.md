@@ -54,7 +54,7 @@ https://www.taoyuan-airport.com/uploads/flightx/a_flight_v4.txt
 
 [政府資料集](https://data.gov.tw/dataset/26194) 目前另連到 `https://odp.taoyuan-airport.com/dataset/2023081816?format=csv`，其格式不同，實測內容出現 2023 年資料，因此未靜默替換指定的即時 v4 來源。若 v4 日後失效，程式報錯，不把網站首頁或另一資料集當作研究資料。
 
-儲存：新航班快照為 `raw/taoyuan/a_flight_YYYYMMDD_HHMMSS.txt.gz`；解壓後為原始內容。既有 `.txt` 歷史檔保留。每日每小時 :12 排程啟動，實際時間可能延遲。
+儲存：新航班快照為 `raw/taoyuan/a_flight_YYYYMMDD_HHMMSS.txt.gz`；解壓後為原始內容。既有自動收集快照已逐檔轉為 `.txt.gz`；原始內容、舊路徑與雜湊的對照見 [壓縮轉換清單](docs/data-audits/20261128-flight-gzip-migration.json)。每日每小時 :12 排程啟動，實際時間可能延遲。
 
 ## B. TDX 官方 API 與真實 schema（2026-09-16 核對）
 

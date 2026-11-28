@@ -1,0 +1,1262 @@
+{
+  "description": "Byte-preserving gzip migration of existing automated Taoyuan airport flight snapshots; historical collection logs retain their original path and source hash.",
+  "baseline_commit": "aa727cbed82a5da5badc379aadc8a45c4354f457",
+  "files": [
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_000141.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_000141.txt.gz",
+      "original_size": 547090,
+      "compressed_size": 62462,
+      "original_sha256": "1409d51d449d37ea22bdd4759670b71725e0034ed657ead070a751e4aedb9473",
+      "compressed_sha256": "d165d83ce33a36400901c603b18418e0f44d340328f1db02e08973c19eb52cd1"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_033030.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_033030.txt.gz",
+      "original_size": 548786,
+      "compressed_size": 58775,
+      "original_sha256": "c9ee64db1799e54dbf3551771a41bbc81a5a448743be143969cbf4e660364bde",
+      "compressed_sha256": "b61546dd16a9b776232c71e31f1337c416939cf4ef42c13fab5aa38a164fd0d9"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_081858.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_081858.txt.gz",
+      "original_size": 548786,
+      "compressed_size": 59033,
+      "original_sha256": "546ad6fba6df3c1e10bec4f860bed24a340a1e04a7f6a0d768e1b532036d2db6",
+      "compressed_sha256": "bf9247afe650585ab7b886711c1df8322c6ee5b166c7476daf12261dc6b1414f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_094227.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_094227.txt.gz",
+      "original_size": 548786,
+      "compressed_size": 59282,
+      "original_sha256": "fcea017106b42da652a537a34c04f8320d3c102e7810995699505f69f03231b0",
+      "compressed_sha256": "edb189cdaa2471e08eadea942081c14caddc23c45c8b1a2c36d1955e9e1f9784"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_100351.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_100351.txt.gz",
+      "original_size": 548786,
+      "compressed_size": 59269,
+      "original_sha256": "42c07bf9089eda550c94ae2890d15e90dfa27b611b9668e61361a6a5704736a2",
+      "compressed_sha256": "9265d0056e065175c1f190e4f6db017754a2cc80d67b41fec6b10b44ae53dbe2"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_100416.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_100416.txt.gz",
+      "original_size": 548786,
+      "compressed_size": 59269,
+      "original_sha256": "42c07bf9089eda550c94ae2890d15e90dfa27b611b9668e61361a6a5704736a2",
+      "compressed_sha256": "9265d0056e065175c1f190e4f6db017754a2cc80d67b41fec6b10b44ae53dbe2"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_120717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_120717.txt.gz",
+      "original_size": 548636,
+      "compressed_size": 59464,
+      "original_sha256": "6bca1808bb52936b8cc4deafbf22386be7b176d82a697adaea44d73bd8aaaac1",
+      "compressed_sha256": "39f4a0eff0a713329e58a0bd3a71f089b65dccc353733d3a9bc4fc5b2d7b827f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_172255.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_172255.txt.gz",
+      "original_size": 548779,
+      "compressed_size": 60270,
+      "original_sha256": "efe5515fd089fc0853187646b68933c191a4e9358bb00ddc93d97fee0b0b8193",
+      "compressed_sha256": "9905b14644df3c36a0d6b7e512ea0ecfdd07bdad36de19ab50b0a3e63950634b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260917_180717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260917_180717.txt.gz",
+      "original_size": 548779,
+      "compressed_size": 60294,
+      "original_sha256": "1811739050c903406df1cf2242bb7e6b943199385c94482071bb9df7d82c5c38",
+      "compressed_sha256": "7855c6195d6044f5c07f91b6c1fc68b3dd5417a7d5a977dd6271e1254fde1283"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260918_000721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260918_000721.txt.gz",
+      "original_size": 556332,
+      "compressed_size": 59917,
+      "original_sha256": "d93cc1452df7e7f42574953ec83830de87dfe36061c7b6ce8d3869285dbf74fa",
+      "compressed_sha256": "c4fa4a6730068e759fbe02be561838df21fa44f20a42ba4316fd2bf822beb788"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260918_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260918_060719.txt.gz",
+      "original_size": 556475,
+      "compressed_size": 60128,
+      "original_sha256": "32d90c97ba73e3de0e782443e254e5c8fe5fb664ca60a7849a44c0f51637c68b",
+      "compressed_sha256": "606dde4cb35dd8618238732efccc81c24acc42cdc058d2999eea8203c2a2491c"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260918_120717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260918_120717.txt.gz",
+      "original_size": 556167,
+      "compressed_size": 60835,
+      "original_sha256": "70ec5568d95c65218be354e94530776717b0d30958d0d6bd60bf0c7d12005adf",
+      "compressed_sha256": "db464335dfd5cd2f161db65713a223e2f7e496ff8890ff684bf6441c05512ce7"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260918_180751.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260918_180751.txt.gz",
+      "original_size": 556166,
+      "compressed_size": 61664,
+      "original_sha256": "3505af4ad8270dbe7d9e0518e851bcbfc2e5d075066ca1812269cf44d1834591",
+      "compressed_sha256": "4014105c7c9aa61c23a45ffc6f0b09b6ea4bac07a83029a7c15a0b93cc937328"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260919_000716.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260919_000716.txt.gz",
+      "original_size": 556737,
+      "compressed_size": 59784,
+      "original_sha256": "caf434959bd1fb82a2a6142006fc8dad1a11ab509e7db3e5f02c9b537b4b82c5",
+      "compressed_sha256": "579e913546155c603521aa43b76a6374c6ea87ad273138bad81c9737af49f181"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260919_060716.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260919_060716.txt.gz",
+      "original_size": 556737,
+      "compressed_size": 59922,
+      "original_sha256": "d478aa8e75a565984aac63105cc032cd9575b16cc66238511fcf69d00acbdc0d",
+      "compressed_sha256": "2984d084015260f7cfc17e78eb8655805f0dc04f7d896fcb02f8347607c3b0e0"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260919_120717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260919_120717.txt.gz",
+      "original_size": 556297,
+      "compressed_size": 60692,
+      "original_sha256": "6134f5d409a8af8faace362163bd78f2acac8e59e6d57f170af5159b38eb5987",
+      "compressed_sha256": "c5f007508f0a56921cc0530177acd93105d50ca5e9e6b00ca0667c4af412004e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260919_180715.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260919_180715.txt.gz",
+      "original_size": 556297,
+      "compressed_size": 61420,
+      "original_sha256": "562e6c11c88f8df1e817cac9a98fbf56b50646e5621732a88aec56b44d12a861",
+      "compressed_sha256": "e7c4cc0ef641beff2435a24a80f73b9376ca1b79444cd0468d9a3f192af1411d"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260920_000717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260920_000717.txt.gz",
+      "original_size": 552585,
+      "compressed_size": 59279,
+      "original_sha256": "f2814c8e96f0deaee3cd72307b68e359113e1d4a1b763d63ed7cdda494f0aee6",
+      "compressed_sha256": "92a534b0bec64b8e5cd3cf808ceedd4f41357450ff34f24374e3668510fe1b3e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260920_060714.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260920_060714.txt.gz",
+      "original_size": 552585,
+      "compressed_size": 59459,
+      "original_sha256": "fa9abaae26f07bca3e18e4e9228547c71e69355ec4f743f91d6b70b351918452",
+      "compressed_sha256": "7d167d08f71c888e650b132cda413f080551ee9c6b7695a875c6eb7ed5f6e621"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260920_120717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260920_120717.txt.gz",
+      "original_size": 552585,
+      "compressed_size": 60298,
+      "original_sha256": "62f06fd6c2143497ae41c7094e4b339c10cac8950c83627496a3863c7cdd81bd",
+      "compressed_sha256": "1d4721ae29e568f53b5659f352ad134430b0a0349429e544003674dc55ba5418"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260920_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260920_180718.txt.gz",
+      "original_size": 552585,
+      "compressed_size": 61000,
+      "original_sha256": "8523dea7f2c77320cd277d4b8fb8ab6e65ce33c2a6f59f3f479af5b44a07f57f",
+      "compressed_sha256": "3029afc7d92946201e12aab4270c6105b70c349709aa8204cc90839a97d48da2"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260921_000717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260921_000717.txt.gz",
+      "original_size": 554324,
+      "compressed_size": 59519,
+      "original_sha256": "3acb27a7ab7a463bc80214dfa2e5e9eb8940d84e7079151f91bae0430dcc5313",
+      "compressed_sha256": "e8fad9fa45f5113c4386051858ebc0b6cc003ea6bc256b37e11eb7d4b33edef6"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260921_060715.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260921_060715.txt.gz",
+      "original_size": 554324,
+      "compressed_size": 59707,
+      "original_sha256": "b000da2bd7026eb08b906a26254eff15200ceebc6b13a5c16dd92f73fd2d5506",
+      "compressed_sha256": "8bebb2cdffef4b2700fe2822a4035cbfa4a7d2d28d377db38b4263f570c2dbf0"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260921_120716.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260921_120716.txt.gz",
+      "original_size": 553898,
+      "compressed_size": 60342,
+      "original_sha256": "6b2af92ec3606f7b0046ef0e9594fe33db0a3ea6b31571b46b17c6218ae78dfe",
+      "compressed_sha256": "3dd98c7bb53a911aef2e4cf8ad97c0dc3574269ddaa97c5a4e13630c53992809"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260921_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260921_180719.txt.gz",
+      "original_size": 553891,
+      "compressed_size": 61161,
+      "original_sha256": "fdd34b3c613d225c98acd1c1f7c6e7487bc6ceea1d0c65c9f0d8a4026361132d",
+      "compressed_sha256": "760cd4d81832f5d77892b19dd9c7c4154dc20716fdd1b7b88440e9bcc6d4c4a7"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20260922_000717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20260922_000717.txt.gz",
+      "original_size": 546209,
+      "compressed_size": 58669,
+      "original_sha256": "2854ee2269dbeedc5b8e55968e4a329e2caa2cb4e4ce9bbde09ae8aa4880bdff",
+      "compressed_sha256": "7fac1c5437efa85ec8483a0c58a66e7904dbdd70e2ab37cb4c5c97491d8a26ca"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261006_155519.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261006_155519.txt.gz",
+      "original_size": 549231,
+      "compressed_size": 60425,
+      "original_sha256": "95a18d8da23b190a458d41709bbea841ccf33df2657d8e9fb506dd1f45f6bcfd",
+      "compressed_sha256": "4c559cd82c85bd6aefa6a264ecb03d9dca13bc8b9074f5920a53f2e51da0470f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261006_160803.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261006_160803.txt.gz",
+      "original_size": 549231,
+      "compressed_size": 60458,
+      "original_sha256": "dfa366d21cfebb7b69db5801078b75dfd491553cb3b9093d88b23a3154893897",
+      "compressed_sha256": "b478de7005b26a008c5aa38207093a6aeefd63b598c96fa62d81e58dc1150cbf"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261006_180721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261006_180721.txt.gz",
+      "original_size": 549231,
+      "compressed_size": 60608,
+      "original_sha256": "890c66c7376f4d49176167f088bf2b5cfba217965739b187598b92cdea7d769f",
+      "compressed_sha256": "ece4462454054ef59e531e03dc9037d7c47e1dbd06e6e64d01b1589bb8a6ac9f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261007_000722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261007_000722.txt.gz",
+      "original_size": 555903,
+      "compressed_size": 59364,
+      "original_sha256": "4c53488e23e8e3825900ba9418d0531d1750dcbc12f03069f8a1d40986925441",
+      "compressed_sha256": "44b071a2abd86e7cb6b877e45f4f0d25211500c72644d0d1aece1819123be35a"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261007_060718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261007_060718.txt.gz",
+      "original_size": 555903,
+      "compressed_size": 59583,
+      "original_sha256": "95164af92e08b41ca474fa76dd3f3365df1fdfdd216ce46bca731109b96f90b5",
+      "compressed_sha256": "6e04df45fc398afcddc557db8471ca23b77cd4ec72c2cd5c535d8043d15ea5e2"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261007_120718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261007_120718.txt.gz",
+      "original_size": 556053,
+      "compressed_size": 60359,
+      "original_sha256": "390f447d4388356c38f792e32b92693fce0b61364e329e763fae2c63e2eeb57c",
+      "compressed_sha256": "c5a2fcfebbf7bd70d7f1ceec2f1c35ca8063c2eac050075ab4657b1236b3d2f3"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261007_180720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261007_180720.txt.gz",
+      "original_size": 556056,
+      "compressed_size": 61142,
+      "original_sha256": "1dc3f927346b15fbdb35c3018c9341009bfd87f04b15c766f4100dba5896658e",
+      "compressed_sha256": "2cea9edafcf945101c14cdeb042d23de586a17e1580a204843fbd8876d9c7d2b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261008_000722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261008_000722.txt.gz",
+      "original_size": 563322,
+      "compressed_size": 60336,
+      "original_sha256": "167d0b431ad7e342941eba8223154dc096417821246b9d86d2d767a3b2fd36c7",
+      "compressed_sha256": "231cf5aa5cce8c752920344797ad87f088d3ab78a89feb6465e0ac5cb5d3f474"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261008_060720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261008_060720.txt.gz",
+      "original_size": 563322,
+      "compressed_size": 60569,
+      "original_sha256": "1bfbf6cf72f677d7afca07c5d845dc18a310b9ffd1f75b06a213e4f3925d81ab",
+      "compressed_sha256": "5a54f942426242a4a24ce7ae1214ac58033091ed8f991b3602decd99e082e84b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261008_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261008_120720.txt.gz",
+      "original_size": 563793,
+      "compressed_size": 61286,
+      "original_sha256": "baa8b1c392d662e40577c5470b1ece9fa0177e8561129c056a89cef98153bb98",
+      "compressed_sha256": "a3ef51425d8912504a535a5dc9e804e597b3092fa9f9054e0db2fc6a199104d0"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261012_114829.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261012_114829.txt.gz",
+      "original_size": 564131,
+      "compressed_size": 61475,
+      "original_sha256": "a94587abf2a3b158a7c6a4130d6de34193cce29376f890c168ecbd21a86aa2d2",
+      "compressed_sha256": "cc6012800e37ab4d8872ab571c1e52d59fa15ed56b59f0d38506abf6f70bac77"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261012_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261012_120720.txt.gz",
+      "original_size": 564131,
+      "compressed_size": 61544,
+      "original_sha256": "b03d9f25fc1f90b3f432028cc29961824e5e1d3389e36a8c9efbab27c8b72b8c",
+      "compressed_sha256": "1acb74330966648357c7980d656f83d9ff25c793f30a8ae77ea838f6ffddf7e3"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261012_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261012_180718.txt.gz",
+      "original_size": 564131,
+      "compressed_size": 62233,
+      "original_sha256": "f1d07e2da243647f80a2231cb2aea36d501bde0440ef7fd5e3be60aa728c7b37",
+      "compressed_sha256": "af21e2f03d317eb669779ce08be1f54d90fadda7c329d4e984b6011efc8c4383"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261013_000723.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261013_000723.txt.gz",
+      "original_size": 550449,
+      "compressed_size": 59170,
+      "original_sha256": "34bd62e30b6c6d2ac0d36cf6df9a2aed372870420ae424b6e504e007a2a39978",
+      "compressed_sha256": "e31ce5b3993433f351520cfe68f6b196ed4eaff8761fe488d5ecfeba186931ff"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261013_060721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261013_060721.txt.gz",
+      "original_size": 550449,
+      "compressed_size": 59301,
+      "original_sha256": "c0fa10e686f5ef71d8db2db1f4f09b7428f5b3c7c9a07bb57139f006d50e1625",
+      "compressed_sha256": "d567e7e5ca6034fe474b92db9d529b0b25556f328ce5ae7d3d0bb0ded039a0a9"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261013_120719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261013_120719.txt.gz",
+      "original_size": 550749,
+      "compressed_size": 60057,
+      "original_sha256": "4eb72fc2ec5f8c1158ad2ca5ff7e6973435aa8befcc757613a1d4bd3fdfed918",
+      "compressed_sha256": "ccb831a7dcf34d03d8bcf9975e10044e6dab34825e9b783eb389c7e169ee5ae4"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261013_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261013_180718.txt.gz",
+      "original_size": 550749,
+      "compressed_size": 60850,
+      "original_sha256": "684f2eb4e7a1fb94be03d49873e655d5d3ec0457cf46fc39ad42f3d2d3057496",
+      "compressed_sha256": "af11e00002fa15e224c9baef26401fa9fce4f760c699c7156e5f4633e6538a90"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261014_000722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261014_000722.txt.gz",
+      "original_size": 553216,
+      "compressed_size": 59377,
+      "original_sha256": "07b2968c2139c0b5043e52641185021e88e1bb6c050b62afafd46d97e3df7570",
+      "compressed_sha256": "aae2eeff8972633257557fb92384383088a51d2663ba752b27bdf8c92cf181ee"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261014_060718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261014_060718.txt.gz",
+      "original_size": 553216,
+      "compressed_size": 59548,
+      "original_sha256": "e330aacd339135719518318214f28bf5c6d700deebdba27cbb51cc1512b42797",
+      "compressed_sha256": "a92c373712567e068afd47097cc788e8f0cb75d86d0489830e31e978bdbabac3"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261014_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261014_180719.txt.gz",
+      "original_size": 553799,
+      "compressed_size": 61051,
+      "original_sha256": "b441902e54c9810839bb4ab207c76365d5a3ef6ec82e0712b7bfaad6068b1f70",
+      "compressed_sha256": "1f428b6abb0ecdb8e9bd5b54b36b6f1f0a93186609ae6d5de7ccd7798f179f2c"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261015_000718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261015_000718.txt.gz",
+      "original_size": 555365,
+      "compressed_size": 59517,
+      "original_sha256": "ea1252a9f92818021f87e32ca53479e8e516b0a15acbe105302d6345c867a665",
+      "compressed_sha256": "eb57027992f5fffe3e0d3d81cfa63f792bc6ea3fb7cc886ac92370172bcf5b6e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261015_060720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261015_060720.txt.gz",
+      "original_size": 555365,
+      "compressed_size": 59676,
+      "original_sha256": "4c63fd957293ceb4e1155a8af213348598ef14d1445b3cb8810387d447c0f8c5",
+      "compressed_sha256": "045050021b805e7591f3a610efb79f25bcde29e5474ac04b2612b281ff5c601e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261015_120718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261015_120718.txt.gz",
+      "original_size": 554742,
+      "compressed_size": 60279,
+      "original_sha256": "118605d3c4d1e558586ce83497ca4bfb7994f5d4de895dda9a92e164e86931dc",
+      "compressed_sha256": "679d4c19b21d1a3e0012a6a3ba16a551b60fc22db08bedbb2132116e65cbdc90"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261015_180722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261015_180722.txt.gz",
+      "original_size": 554456,
+      "compressed_size": 61040,
+      "original_sha256": "37ad6dca04e7fc39ccb0571636d5d78b84d4fc0fcebd7a2b99999a4fc35bbd1d",
+      "compressed_sha256": "f03eb9b4d0bdfb23e3c23476916785c2ebe34ec84d73958ff6865a9eb56189ed"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261016_000720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261016_000720.txt.gz",
+      "original_size": 560959,
+      "compressed_size": 60281,
+      "original_sha256": "14dee87aa0d8db92146f45de8bd3548c177d81d819386d5734be2daebc424448",
+      "compressed_sha256": "65786bce1f5bb392185710bfdf5f76f48b045c60a1b516ff60b5f81bfa8ec168"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261016_060720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261016_060720.txt.gz",
+      "original_size": 560959,
+      "compressed_size": 60417,
+      "original_sha256": "d2f10d461bc4f8b145694652581bd49e0c2ec476ad65775998fd6111ebf73ed0",
+      "compressed_sha256": "f28c7e8d3c04d6e2a01cfff3da3ddb2b17cb6ea62d05e1b9927ee1c8a4bb1b14"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261016_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261016_120720.txt.gz",
+      "original_size": 560959,
+      "compressed_size": 61115,
+      "original_sha256": "fb74be936c3f66a1de4540deb5d2fc30a5f04bbf8185ed14196c97dd735221d6",
+      "compressed_sha256": "cd4600111e146f187d0dfa5f45d8bdcb382a8a6e0656d7da68541136bd0e09c7"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261016_180720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261016_180720.txt.gz",
+      "original_size": 560959,
+      "compressed_size": 61894,
+      "original_sha256": "bdbbb9a4ee4c87209135e2860b2593ea2b66d62c2f38176b890c6b7c1c88f393",
+      "compressed_sha256": "a53c3fd2185fd830525415f1b74ee5994909a8949ffb3e24de7904aa9c1d3fd5"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261017_000725.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261017_000725.txt.gz",
+      "original_size": 562363,
+      "compressed_size": 60425,
+      "original_sha256": "e260a23a427f7aab6212e7db9cfd01c15fb4ade88e2cdeb98a9e43fa735ec91b",
+      "compressed_sha256": "ec7f4d915de9ac2cba808e551fb800ce93217244f30a7aa022eb30f666980524"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261017_060720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261017_060720.txt.gz",
+      "original_size": 562363,
+      "compressed_size": 60557,
+      "original_sha256": "b0e8173f59789d49747b82d0f10da900169e032f41b033c7da326682a09513f1",
+      "compressed_sha256": "ddebc56cb7f70eb501245ab3de2f96cd43763254db303471f59d4037892070d8"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261017_120718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261017_120718.txt.gz",
+      "original_size": 562228,
+      "compressed_size": 61295,
+      "original_sha256": "542e603a8b9d48ecd21d4426f7f80a0843c63a2e8831bfa467e334cb3343ea70",
+      "compressed_sha256": "42956b4d117cd3f5b447fbdd1927b89bdc9651317ad4e64c860baa8511b9879b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261017_180717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261017_180717.txt.gz",
+      "original_size": 561924,
+      "compressed_size": 62031,
+      "original_sha256": "819a989f4f845b0a78536d64ec0b46367343f7af763780d8545fafd9e88b9910",
+      "compressed_sha256": "048e336d310b305f6724709d0d5762ab41acfc3b6b48ed860ca06b4d712b4ca0"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261018_000723.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261018_000723.txt.gz",
+      "original_size": 558799,
+      "compressed_size": 60159,
+      "original_sha256": "b890c2abdc24878a30701af4f78a700d616c6ccda60c2f12b23706b5b998a57f",
+      "compressed_sha256": "ab28a286e8ce78d327a06933f2757181104bac24b71ef716f3ff9d1190387ff5"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261018_060718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261018_060718.txt.gz",
+      "original_size": 558798,
+      "compressed_size": 60285,
+      "original_sha256": "ebd6a0924ed0597223e95e76121299487464eaaf944f78387ebd975a1f8927c4",
+      "compressed_sha256": "7dd991be448bf05ea1e2089dab6dc1820f23ab3956e8aa1097e4218c557c4b8f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261018_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261018_120720.txt.gz",
+      "original_size": 558486,
+      "compressed_size": 60927,
+      "original_sha256": "7349b72b6c420f671ddd48c920aa2b9706e8918fa38446834f87121c34736c76",
+      "compressed_sha256": "1fcae1cc9e15e313481182e330f7e3f51ee71895edc7fb9b2c81f39c9a6f9bc8"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261018_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261018_180719.txt.gz",
+      "original_size": 558486,
+      "compressed_size": 61800,
+      "original_sha256": "728ba1a30b14e01a5f51fe38c380e1465fc780b09acdbb05ff626ddc1f7d0ef3",
+      "compressed_sha256": "4484601c5494802864f7fafec8cb9257e701d73b26746140a5a91ec1e3bb909e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261019_000720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261019_000720.txt.gz",
+      "original_size": 558297,
+      "compressed_size": 59995,
+      "original_sha256": "1ca72735c329082d13f6164a6dccbef2a2ea867cfefd0e219124ccd85790c8e0",
+      "compressed_sha256": "6fb0c662f2a7c04205e6693c4cfa6e0eb84c2375a7b07661c6f10b3f2c30cef6"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261019_060717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261019_060717.txt.gz",
+      "original_size": 558297,
+      "compressed_size": 60180,
+      "original_sha256": "6fdab92e8703d822dcd58b0d6a6ea18f4b62b4e85d99b8bb6f8105b47a6d241c",
+      "compressed_sha256": "3aa3f5a6aafd130c691789614d558d72dd70edc31fe801e2c5796c61c1eadf9b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261019_120723.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261019_120723.txt.gz",
+      "original_size": 558447,
+      "compressed_size": 60877,
+      "original_sha256": "0e10cb6e856d714340e06bb7cf52cad4e012530bee2e58dc35d46d787a382c03",
+      "compressed_sha256": "ae77e88c09a5a45a81c9beea5d83dd218e9eaa4b9e2d5ac12cd23184bf34d64f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261019_180720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261019_180720.txt.gz",
+      "original_size": 558447,
+      "compressed_size": 61664,
+      "original_sha256": "c019a0bd06c1c67c3f67683c1845f41232c84a1621d974e7a2324da82cea1b30",
+      "compressed_sha256": "a2294c1efc3ff945033899224050b6bfefa8b2b98b9fa451a8fd40c8d24ecc5b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261020_000721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261020_000721.txt.gz",
+      "original_size": 548228,
+      "compressed_size": 59022,
+      "original_sha256": "55c8d2f407d8ab492f44afe50f6f6231a857c64945cff1220dc67baf5609f69c",
+      "compressed_sha256": "530c5c4dae8a1c6f21d92dd1381cc006d97238716672e4f3695bbf3d25adf7fc"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261020_060721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261020_060721.txt.gz",
+      "original_size": 548228,
+      "compressed_size": 59176,
+      "original_sha256": "af5878f0c16040c1bc5612d0bcb1131bef0d7d28571b177540fdf4ecd859c91b",
+      "compressed_sha256": "fffd8d5207a0408dbce8d21340691fce77df398e3e51746e335ec7af6affeb2a"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261020_120719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261020_120719.txt.gz",
+      "original_size": 548086,
+      "compressed_size": 59798,
+      "original_sha256": "01fcfc4719042f319b7b0d90897dec629843415ef11beec3ce79971718a489ac",
+      "compressed_sha256": "acb9e2ff9db8042562715f3f3f126485274b35cf29e0c7e8eac5d1a39595574f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261020_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261020_180718.txt.gz",
+      "original_size": 548083,
+      "compressed_size": 60508,
+      "original_sha256": "b9b6e4b31223e168ecef8262f91c42bd5031099478a2616bc54f8c7b4a076490",
+      "compressed_sha256": "80a68b528ebef737d5e9678db76b407df5b2a452ce721bfe9152cd9f4e710315"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261021_000722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261021_000722.txt.gz",
+      "original_size": 554739,
+      "compressed_size": 59349,
+      "original_sha256": "6e12ea3638c2c090fe3be75f24aeba30d2289ffe76fc4a1066466a07667fb3ae",
+      "compressed_sha256": "ac4fe67a396069498c86a570b58568a938499144f504e15d9b33b4ddebb538bd"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261021_060720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261021_060720.txt.gz",
+      "original_size": 554739,
+      "compressed_size": 59526,
+      "original_sha256": "23b7e6837faf7e8ece0af4f2291f412b275a467c46b1479f632794fb1788b95e",
+      "compressed_sha256": "f50f5bd39f2ed442e9a264bdace302ecd168c845a4499b92c8c9e5957aed5a46"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261021_120718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261021_120718.txt.gz",
+      "original_size": 554889,
+      "compressed_size": 60311,
+      "original_sha256": "f1edac671931fd691d8a4e86a9db2cdbb641b0f3815d49276d4e59ed0ebb12a6",
+      "compressed_sha256": "ad13e4e06f98cf786e054588dea148609666cd089727f59a379370ff6cb5995f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261021_180750.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261021_180750.txt.gz",
+      "original_size": 554894,
+      "compressed_size": 61131,
+      "original_sha256": "6f2cd456fb3272ef971a7fcfde537b035365383e2c01ea2a27c51e91cfb69bdf",
+      "compressed_sha256": "743bd1e311d24a5aa26ae98e8b1de76f73c687312033aaafbae1c50a96f49c4a"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261022_000719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261022_000719.txt.gz",
+      "original_size": 556707,
+      "compressed_size": 59646,
+      "original_sha256": "addd7c4cce0678ebf3cb8c7e9ab361bfe906ec68a797298a6e5afdc080211187",
+      "compressed_sha256": "b70285fc4eb680ac23d7e0f9c48159e96bed2308187b698fd119855cb58e9dad"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261022_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261022_060719.txt.gz",
+      "original_size": 556707,
+      "compressed_size": 59832,
+      "original_sha256": "be87762de029e3a223fac11fefa0200605eee8725c898df239dbc4decf350bdc",
+      "compressed_sha256": "a29fc5c9356fa0e3be859ea5b4041142cc05cf33407b7d678f9fb9b99c21ed90"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261022_120717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261022_120717.txt.gz",
+      "original_size": 557150,
+      "compressed_size": 60573,
+      "original_sha256": "085b4119a90c8e6ae46b786bc4b4dac4349a58a72853182733314063b8916356",
+      "compressed_sha256": "bad846151859daec862a45b7bb51d14dd2df43a5524db16939583dff78100382"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261022_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261022_180718.txt.gz",
+      "original_size": 557292,
+      "compressed_size": 61286,
+      "original_sha256": "77c2405033c4373d1345945d8fcc8237fc192b5084614fd69815653f76c039a9",
+      "compressed_sha256": "8ab083877f49846ca45921e52814e71f5e06d40df06ff5f17130a09f92c7abdc"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261023_000717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261023_000717.txt.gz",
+      "original_size": 557153,
+      "compressed_size": 62057,
+      "original_sha256": "941e2fad8dd39933cd44785c230f6cca14a65d51d66a3952351838a9755945b5",
+      "compressed_sha256": "2c5b765006a39d03dbce37d1f416ac98d7f384b3f5dbaff70645de4c5dff5256"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261023_060717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261023_060717.txt.gz",
+      "original_size": 565256,
+      "compressed_size": 59178,
+      "original_sha256": "f9f1437bbeaf553c0036886a686b400076010cd3325dccd6c6b332aa89777304",
+      "compressed_sha256": "e49c4d032acb5e1863c9c2c0b78ba680f1ba6d9d23a438c34b34f539c1f0abe3"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261023_120719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261023_120719.txt.gz",
+      "original_size": 565544,
+      "compressed_size": 59516,
+      "original_sha256": "e845afa04c3fc06e57f712f15978d28f2a6cbbb66162d6579f15af165711a653",
+      "compressed_sha256": "dbc50bf3890a1808b6848c3108cf65ef0c240017986a2caf7f4de4258cb28cd9"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261023_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261023_180718.txt.gz",
+      "original_size": 566379,
+      "compressed_size": 59810,
+      "original_sha256": "d6588320b59c37f6bd22e89fb0010126e31a96b844faa9a4122d85e7128d21d8",
+      "compressed_sha256": "f08462ca27037448f967ffc462a82b8ffd2faeda444a417c42562b831bcf2568"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261024_000719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261024_000719.txt.gz",
+      "original_size": 417184,
+      "compressed_size": 44114,
+      "original_sha256": "4f5ab6f0651479023aaf648a2e3632028230213d2ea5ebc8a7a299083d1c8667",
+      "compressed_sha256": "be41c90e7a67bdd616833d8ec23fbcad61d5691da460e478be986da5ac1c6b09"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261024_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261024_060719.txt.gz",
+      "original_size": 416870,
+      "compressed_size": 44122,
+      "original_sha256": "a7fc70a04221bf22717042692481e9bb0209404eb6d46f57f9d6cd38e806acef",
+      "compressed_sha256": "693e98b6b79fe8261435e9b43160a34747c77d66633a21063e37b93ce6952b65"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261024_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261024_120720.txt.gz",
+      "original_size": 562823,
+      "compressed_size": 58032,
+      "original_sha256": "915baee01db322f053d91cf64d598de3788b5b4cb9df854e17bf8154c055afc9",
+      "compressed_sha256": "0e4879024741e4ca765a899b294f73c5149dff0141ac3b92abe13690378392ac"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261024_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261024_180719.txt.gz",
+      "original_size": 562754,
+      "compressed_size": 58717,
+      "original_sha256": "aff7d42a15035d52b579fe1d187d2880d0fddca540b0908faa1e621612bb54e5",
+      "compressed_sha256": "f544fc90da24fb695891ad781be5858cfba7ffb66d5f4b625a16382c7e7edd07"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261025_000719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261025_000719.txt.gz",
+      "original_size": 560243,
+      "compressed_size": 60408,
+      "original_sha256": "859083e6a9a807afd9489cc74e60525debcf3320c8320a4913408ab3e0de3229",
+      "compressed_sha256": "470c0423f93d8dd42bc5f4a99b80ca00c71300da248509208fdb5c569524a936"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261025_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261025_060719.txt.gz",
+      "original_size": 560246,
+      "compressed_size": 60518,
+      "original_sha256": "b617fc9d59539047ccff778d7272b45829dd0b7ef21fce024575e8c4b610e04d",
+      "compressed_sha256": "8ecad899a5635137d3b23981ca579d1a41b2304c1b1e6b26b8a41428ec3a1128"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261025_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261025_120720.txt.gz",
+      "original_size": 559530,
+      "compressed_size": 61035,
+      "original_sha256": "e4fa5b151d791d41f2ce5877e331aa034b1919bbba55448dd5f86bdd907a4f27",
+      "compressed_sha256": "e4a81a071787a80868be30c4ec56331b6df3e3d345210ba3476d9cd4b658a70a"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261025_180718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261025_180718.txt.gz",
+      "original_size": 560139,
+      "compressed_size": 61951,
+      "original_sha256": "055662085f83a15b5edfea90a84de0087124d4e510523298bea13a6e0085e56e",
+      "compressed_sha256": "cb8bd17007589591a2a7b681ab41351355260ab50a8d605657af7bb4cb3d0044"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261026_000722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261026_000722.txt.gz",
+      "original_size": 554786,
+      "compressed_size": 60358,
+      "original_sha256": "cf8fd7aad3501804a49b9c01ad733dd85a405adaf2364b6af6676541c69eb775",
+      "compressed_sha256": "28a16ec6eb66289eccbae6172aba73120b18a545af01fdf08697f0a6372b168f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261026_060718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261026_060718.txt.gz",
+      "original_size": 554786,
+      "compressed_size": 60546,
+      "original_sha256": "e0603285addfa9861511cb0048a7bce17a426a76252da0ca5486ce226373c96d",
+      "compressed_sha256": "e61bb7f6ac47ebac22e1475ea7e24f49e6b4be0af354acf7eb1283b97be1ee25"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261026_120718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261026_120718.txt.gz",
+      "original_size": 554937,
+      "compressed_size": 61140,
+      "original_sha256": "5857651eb2fdf31ab6327c640d25f6959340c85c1120e4d85223d2e7c821955d",
+      "compressed_sha256": "cf0f4d978aa26a2f23529f96f54b9705787a48e4ba4455eab3ccab92d078a9e7"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261026_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261026_180719.txt.gz",
+      "original_size": 554937,
+      "compressed_size": 61949,
+      "original_sha256": "98944a91f39b0aa3e57fdea938e342d96eb882439dc7551328bc5ca970a12b1c",
+      "compressed_sha256": "da111b2a20f829add3763bc643c8241c5e0646716cd0195b74bbdf97f509550c"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261027_000722.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261027_000722.txt.gz",
+      "original_size": 545880,
+      "compressed_size": 59272,
+      "original_sha256": "46c7f09f01c307e87c0289ece5f360b2bc506ed3374157fd88d63091ef5b873c",
+      "compressed_sha256": "5c3f15cfa3e5562842fd2483b47af48946d1c01c4aad6a7b2a3d4997bf95d7ab"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261027_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261027_060719.txt.gz",
+      "original_size": 545881,
+      "compressed_size": 59393,
+      "original_sha256": "62b267cf4f2452ebc214c330a8c5d8d0194d4677be956c54f1bf560abd8f5ebb",
+      "compressed_sha256": "543c4c4c37b7a03d688f8554b370e7b88182ccf080c2717bbf3fcf85f3f4f362"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261027_120717.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261027_120717.txt.gz",
+      "original_size": 546025,
+      "compressed_size": 59901,
+      "original_sha256": "84d3b0f2b9b9e83e67022b74a2dcbbd7718bc4098dc6aedd325990d1f500c584",
+      "compressed_sha256": "684d0f809260f95f8b9fb429be328d78e5935d43ea5d7fea2ff05092eb0b48ac"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261027_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261027_180719.txt.gz",
+      "original_size": 545596,
+      "compressed_size": 60622,
+      "original_sha256": "29e18f07dd980eadf0baa3446f8ef31f9ca62d8eacec8c8b93f354004bba1616",
+      "compressed_sha256": "f322eab385f7fe3df989b7da84dee963e2e2c13671f770cf9dcbb7426a24cf7b"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261028_000720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261028_000720.txt.gz",
+      "original_size": 545130,
+      "compressed_size": 58740,
+      "original_sha256": "4fa1c88e992b4b7fd7806a1e701baef416d9a83f74af75f6f895af15d3f0c50c",
+      "compressed_sha256": "fefef49090854f415aedfe7bdc8949f9000253b70462f1c93b70390dfda25334"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261028_060718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261028_060718.txt.gz",
+      "original_size": 544982,
+      "compressed_size": 58912,
+      "original_sha256": "5248f1d8d689e2198ee425384f2b7e74d9cd6ccf369af6d2049adb57b6861962",
+      "compressed_sha256": "09d3a294e4f0e3406a8553ca55c863f1671a5a559649fa8f3b1be5fe6b704e0f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261028_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261028_120720.txt.gz",
+      "original_size": 544981,
+      "compressed_size": 59567,
+      "original_sha256": "86ee2f568ead0a7df5c829a8688f96eb65c7da5fabb7ff07eaa0971200dba33a",
+      "compressed_sha256": "20b3d6f7f1faeb2b447e578502702e8d2fa51d2f1b2c31809b535c3959354e28"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261028_180721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261028_180721.txt.gz",
+      "original_size": 544962,
+      "compressed_size": 60422,
+      "original_sha256": "891ed4253b5d509131584b0109176ead96d7cf98ad8bca9946950ca5b5c4d075",
+      "compressed_sha256": "8a53737847202220f30ac1c2f07d67dac5d7dd224f28f9107f8044c96477eed8"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261029_000720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261029_000720.txt.gz",
+      "original_size": 545358,
+      "compressed_size": 58772,
+      "original_sha256": "a7321bc79b6c39a2bdf2bb37d6ff9492d1e5bc3313102b10517e94f46a72ee0c",
+      "compressed_sha256": "33b5316a5336859d778367e69636dfd78a9355053c3e6a1e682271f638722b9c"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261029_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261029_060719.txt.gz",
+      "original_size": 545358,
+      "compressed_size": 58911,
+      "original_sha256": "888780da95e20c09c361d55eeaa81c0abbdb3cbcb089cc0ef44b93969e76acd8",
+      "compressed_sha256": "171326e12d27bcc145635803f16308dac77b9d8c4f25c70d8a44a8e1d01fa093"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261029_120719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261029_120719.txt.gz",
+      "original_size": 545656,
+      "compressed_size": 59677,
+      "original_sha256": "1bf8027a83d3c4812b5147011f635c20a5ad7b000ce0bd60f9296c9fc439ed66",
+      "compressed_sha256": "067ad6e12c79899cc0bae12f40d0fbcee3b7dcab10709e3e54d67213b3ce76b3"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261029_180720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261029_180720.txt.gz",
+      "original_size": 545941,
+      "compressed_size": 60433,
+      "original_sha256": "7d09a4e5b9df0c03030ad0b24f7aec17f0732bf22789e40dbf07388dbd64a591",
+      "compressed_sha256": "d810805399757b516964125eaf79cc33df069404d5a1536843e4a79a210e03b9"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261030_000721.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261030_000721.txt.gz",
+      "original_size": 550454,
+      "compressed_size": 59535,
+      "original_sha256": "eec7c7461be67c4e2343e50c8d3675a89f1d4065278ae6c8eaa254e717e6372e",
+      "compressed_sha256": "e3ddf4f6544767fab99ba3a8b50222f28d52043262596b07fcff3c3ee15a1892"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261030_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261030_060719.txt.gz",
+      "original_size": 550454,
+      "compressed_size": 59682,
+      "original_sha256": "472049ff546d90fd6f0145f8782f09af53f27f47747a8f0e61cb6f9333644e72",
+      "compressed_sha256": "b32ad81add0ec4dd7712a854a89e72c03132c5114f3fb7861a0e153b49139d47"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261030_120718.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261030_120718.txt.gz",
+      "original_size": 550603,
+      "compressed_size": 60303,
+      "original_sha256": "be07f80f12ebfd25fb6c0d037603da2b2a4c903412a40d7e537d21e957d984f9",
+      "compressed_sha256": "9659c986de37024ad8fc95a81460d50bb75b24f89fb961a7a7d23dc4a2e70066"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261030_180720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261030_180720.txt.gz",
+      "original_size": 550429,
+      "compressed_size": 60976,
+      "original_sha256": "074471230cb37a08bded285f037216a8036f0dfc69eb1d029900c98a652f0cac",
+      "compressed_sha256": "9f41b4676b1bbea6c03476b119750d5dc1d33b819d60af37b92a1e91e64aea1c"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261031_000719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261031_000719.txt.gz",
+      "original_size": 550377,
+      "compressed_size": 59546,
+      "original_sha256": "3e4d558e4894b5080c9ad4014fc7a2094d369f03f44ee0d3a080ec5fc62671eb",
+      "compressed_sha256": "3543e6123a92e44ae0e79d14304af2e46ba1d31452b32b1d40dd2ea8e23ee8ee"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261031_060719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261031_060719.txt.gz",
+      "original_size": 550377,
+      "compressed_size": 59702,
+      "original_sha256": "19ec8c5b1ee9b40ea661d7bd5ae95ea90b6b830dedde389b1d11568828eda20d",
+      "compressed_sha256": "bc9a0b185cb191c577c8ace8bbfff9ea8f02ccbf1cc87eee57b9c998c2d6c3a9"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261031_120720.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261031_120720.txt.gz",
+      "original_size": 550392,
+      "compressed_size": 60318,
+      "original_sha256": "5c8fcf89e6213f1dfc78196cd92bea92a45f4086e56237bfe171e71b6a0fc28b",
+      "compressed_sha256": "be7f3bd75727c478380b461a2e0da97f46b8f8f0da1d1b0d03b2069888bcaad4"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261031_180719.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261031_180719.txt.gz",
+      "original_size": 550392,
+      "compressed_size": 61091,
+      "original_sha256": "838ce107cc130e43bb8cc61967c68733f356d93ffe8e59238d6230da9f7412e4",
+      "compressed_sha256": "7a220020a4e5d387dec8cadca88fdacd4759be7c1d13f0abc599cbfd36098666"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261031_212005.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261031_212005.txt.gz",
+      "original_size": 550228,
+      "compressed_size": 61356,
+      "original_sha256": "601eb3e8ccc78e42c4b02785c365e3f72e5c24e65095507007811a685097929d",
+      "compressed_sha256": "baf5441cdacca10164a8c0336ceb6547339aa3c821d2017ac4561d844084e96e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261101_001229.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261101_001229.txt.gz",
+      "original_size": 544287,
+      "compressed_size": 59033,
+      "original_sha256": "1d4e6f80e7b09de0949004271287ec1f039026ab2b11c5ac33d018133ae953c5",
+      "compressed_sha256": "1dea8cd8ef0cd92f50470bd428e9ba131ecb6f763d4e716a96af2cb894964038"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261101_061230.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261101_061230.txt.gz",
+      "original_size": 544287,
+      "compressed_size": 59169,
+      "original_sha256": "7c3b914dc304b3f44abf5ba77afd739d6e5f86d30f03a6e93e3b314b78b6201a",
+      "compressed_sha256": "c6df3c40b1cf75d5b6939cc50c38f8e396bc03a1c89fdff373cddab77be15023"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261101_121230.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261101_121230.txt.gz",
+      "original_size": 543269,
+      "compressed_size": 59795,
+      "original_sha256": "e84aa9e733005363836d0f3218023a0944ea09fee52db145d9dc080288e38edf",
+      "compressed_sha256": "ea9dfd2f9108bd50883813b4a1defeba7c08420e6730011db9c8efa179dfd816"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261101_181229.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261101_181229.txt.gz",
+      "original_size": 543271,
+      "compressed_size": 60570,
+      "original_sha256": "ab52823e434c1239b6e44f8d122917dc9e47ee963917762d564a67195546b649",
+      "compressed_sha256": "0d981c0eafa14757ec40822b951eb3b5b8b92144a0ecb7cea801de7ff804f575"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261102_001230.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261102_001230.txt.gz",
+      "original_size": 542817,
+      "compressed_size": 58824,
+      "original_sha256": "fab18b782b2812819fc15f69684e625885c7d96584bf7d378c29703ea64f2ab3",
+      "compressed_sha256": "26b4960e1648c291cfc4e56fa1009af6da91487c55924450a697a34cf11dcb76"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261102_061229.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261102_061229.txt.gz",
+      "original_size": 542817,
+      "compressed_size": 58968,
+      "original_sha256": "779d4cf318ea316368c2fc865c30230ddf4934685b16ce3fc1b7aa66c21414c8",
+      "compressed_sha256": "bd080434c47c6fbd64f7baecda28129a39e5b11846b28c2408e0d63ded8795bf"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261102_121227.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261102_121227.txt.gz",
+      "original_size": 542949,
+      "compressed_size": 59609,
+      "original_sha256": "1dc1e9452892096b684a88898e861274b2caff02589a454284f305eb02dfc66f",
+      "compressed_sha256": "c53c2a3ecc76273e8a51494ea144010a7edab835b1cd8bad1ac75167b601cc7e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261102_181231.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261102_181231.txt.gz",
+      "original_size": 542949,
+      "compressed_size": 60412,
+      "original_sha256": "346a45de746a8837576e9f071d76155522a42dfd9f19c6940111fef109ddd326",
+      "compressed_sha256": "6eac73a0411c285887895c1d30db43197b0d1f2c849a0927676f685cef42a78d"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261103_001230.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261103_001230.txt.gz",
+      "original_size": 533497,
+      "compressed_size": 57850,
+      "original_sha256": "05ab65e013b70e35713c7f9f2db1dd87f1bbb74982becd951f8259c0b124d2f6",
+      "compressed_sha256": "d009b216d28edd23d7c0b5ea8b98c1620424462daa7a981ad52f66918e40394e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261103_061242.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261103_061242.txt.gz",
+      "original_size": 533497,
+      "compressed_size": 57992,
+      "original_sha256": "6872d76d0634993bc490259b7c27a560de9a6ddae108627a3c42d55b536835fb",
+      "compressed_sha256": "938ea10bfefab2b17d6802341f6af6431a1ced4c9e6b3ace6eb42c221510b532"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261103_121230.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261103_121230.txt.gz",
+      "original_size": 533497,
+      "compressed_size": 58609,
+      "original_sha256": "bbbadba7f6c9efdc3818a94d9fab1efdefb466fe9fd25a371cf3dc036b4624f2",
+      "compressed_sha256": "56a820ff3614d4e96334105b9743448812462c1bb6e4d9d90cf5b40387d8a286"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261103_181237.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261103_181237.txt.gz",
+      "original_size": 533495,
+      "compressed_size": 59361,
+      "original_sha256": "26cd376ab46ef44b8f7b83acaac0fc8eea3e05785c6ee5e6900466398036e31e",
+      "compressed_sha256": "e9b8effaef37bcd6cae974baac9c6e4b5b6051483ff5c69ecd3913731b068e6f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261104_001239.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261104_001239.txt.gz",
+      "original_size": 539579,
+      "compressed_size": 58174,
+      "original_sha256": "e6c52972d42196770639fd32f57543d0b6953da55cfb217c4d5d768c2105492a",
+      "compressed_sha256": "81ce6d0d08a52b1e0af7acc2cd745df4aefa03af53bfcafd8290e072c6a475f0"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261104_061235.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261104_061235.txt.gz",
+      "original_size": 539580,
+      "compressed_size": 58338,
+      "original_sha256": "e54548ae082b902b4f3231af63869b6e72fbbb62f08c98a00e8944a3ecddaf84",
+      "compressed_sha256": "7c8aff4210dc9a2d478f9af54696095b53650a9ce2a748643d55f744ffa0d9e5"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261104_121227.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261104_121227.txt.gz",
+      "original_size": 539580,
+      "compressed_size": 58901,
+      "original_sha256": "26e63811d276ac67652dfd42a4e5d386e4e0b995654f07009b370e7d49b69a37",
+      "compressed_sha256": "db3b7b8657ef93f0eedbb1b1f5e6b34084b5588303b74020b672480e3ba87b58"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261104_181240.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261104_181240.txt.gz",
+      "original_size": 539580,
+      "compressed_size": 59706,
+      "original_sha256": "83740508afadf144aa92361583eee644c71bd26c11a9c632979d218c1d9f6002",
+      "compressed_sha256": "55a6ef098b5c7aad3ab72e145c5df0e7ae7f3a2a7e8b0dd20966521498116c30"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261105_001230.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261105_001230.txt.gz",
+      "original_size": 538147,
+      "compressed_size": 58042,
+      "original_sha256": "6c4aefc324f353c41119adf3d58167eed70f0277f7eb00cd25790858f5cace8e",
+      "compressed_sha256": "f7fa5c07642956ecbcd915ef90f094fb0e96cb8a989fca48ef49b25d741b3a93"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261105_061231.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261105_061231.txt.gz",
+      "original_size": 538147,
+      "compressed_size": 58231,
+      "original_sha256": "c904d0320ee88291cd499bacd330980d8aec6229f44192ac395dbf1a790c8a5b",
+      "compressed_sha256": "c79a44a5c7e50f9e6837e7ccac2321cc35ce0c9c4ce4b418afae34b6c69fa1c1"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261105_121229.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261105_121229.txt.gz",
+      "original_size": 538002,
+      "compressed_size": 58777,
+      "original_sha256": "7e8d844b1fd0835fdeca4d15f5ba736caaa9cec6df57af740cde2cf0b305e0bc",
+      "compressed_sha256": "bb97ee3f67c72594a24b9c30ac840fee4f1ad440651b1c5740b94c3bd0948c2f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261105_181234.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261105_181234.txt.gz",
+      "original_size": 538003,
+      "compressed_size": 59595,
+      "original_sha256": "ec6c4611eaecc5020beb8ac8a2f642b31c062b07241a6b8a48342d793aa68e66",
+      "compressed_sha256": "5f4fa8cdd4658c0e02bff4f7ef3c9fa42d1ce966cb87714d2b1c363f8b69596f"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261118_182934.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261118_182934.txt.gz",
+      "original_size": 540862,
+      "compressed_size": 59974,
+      "original_sha256": "4869b458481ab03f971c39224739b4b1ce3fbe31cc0f8e527e5ea8afa265584f",
+      "compressed_sha256": "a203af28e0544a2ade49c90565222b25600c2b84108cd8d2dc3acd5a9de867bb"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261119_065601.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261119_065601.txt.gz",
+      "original_size": 542445,
+      "compressed_size": 58524,
+      "original_sha256": "48efe726f5320101c46c9afe844c0388d8d9800655137bfba02562e93135ccf3",
+      "compressed_sha256": "c49f39ae0911aa1a660805ebe453c2b49b90b0a5a1652e2a401181e6fa2d1fc4"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261119_205613.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261119_205613.txt.gz",
+      "original_size": 542157,
+      "compressed_size": 60085,
+      "original_sha256": "d363a2fb9473fe90c156310983754e7fcc017a4543e3aa1867ceee4de0880fe8",
+      "compressed_sha256": "803411d9ab5ddca7909ccb3aa91bdfe0a6958bfc1223b046d47fdafcd7d4da67"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261120_070202.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261120_070202.txt.gz",
+      "original_size": 550657,
+      "compressed_size": 59713,
+      "original_sha256": "7cf0e85933cb7c083c0b240bfad4e9a2fd6af95903ccd6109ec6ccf8b51d4bbd",
+      "compressed_sha256": "680ad2473edc5cb0434c6eff4f96f9933a467bc76cacdda341db2821ca4869f2"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261120_204724.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261120_204724.txt.gz",
+      "original_size": 550942,
+      "compressed_size": 61322,
+      "original_sha256": "00ad0d734018ed75158e579f4754264e35371e977fc571a073a2a09f20284902",
+      "compressed_sha256": "f23ff32d236eaa0962a93d02d660ed37c126fa4029d3d60cfab44d03c3025b7c"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261121_063851.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261121_063851.txt.gz",
+      "original_size": 550938,
+      "compressed_size": 59705,
+      "original_sha256": "a40aa9d21dd67f1658a787ed28d97451df81988be064e8760ff13b3e6536d2b1",
+      "compressed_sha256": "6d80451c750d31224ec1cb8adc0c101efc8915bce2ce4070cccf02846dafb348"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261121_203402.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261121_203402.txt.gz",
+      "original_size": 548514,
+      "compressed_size": 61224,
+      "original_sha256": "a77f45dda86db43407cd9e25f0b7cf59bab712d44e690a2a5d155bc0b2254c85",
+      "compressed_sha256": "a3d55d12f123dc8086a335263cc3fc5ff93921c7b37985877718196887212ff1"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261122_053733.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261122_053733.txt.gz",
+      "original_size": 547308,
+      "compressed_size": 59446,
+      "original_sha256": "d5228798d10c8f4bbce78120320344b9bfde5a079483324c14bcb833ae09d77e",
+      "compressed_sha256": "590afec54f802ca66b8d71a2da251f7569b47f91a3479a402c778aea54956eb4"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261122_101040.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261122_101040.txt.gz",
+      "original_size": 547308,
+      "compressed_size": 59868,
+      "original_sha256": "1d853e4d96729fa06af08dacb1ceae0fabab5421dd6b3c3c32e2eae551e78753",
+      "compressed_sha256": "741b8df1162dc5de04526a26bdd26a9abb722bc20900511cd30328242082ca8e"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261122_203123.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261122_203123.txt.gz",
+      "original_size": 547928,
+      "compressed_size": 61137,
+      "original_sha256": "71a56e728af89016c7a1af5c3127800e1921f06dfa810914665e46cc2fc0e972",
+      "compressed_sha256": "589fc503e7e8cf70e869388afdf806065147f983aac3f4fb98d0fb1cf20d3ad8"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261123_054415.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261123_054415.txt.gz",
+      "original_size": 547325,
+      "compressed_size": 59277,
+      "original_sha256": "0423a88b0df620e80d25ae356a18700ab2a1232d6842eeb23e72dc0b687e2f34",
+      "compressed_sha256": "420c465b5ab719d96995b581c688e70e84de70646e7c4c3ac849a85168ac4fd0"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261123_104122.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261123_104122.txt.gz",
+      "original_size": 547325,
+      "compressed_size": 59753,
+      "original_sha256": "5e11a20e5721a87b3687790557098135640a9361f52a9c0d0bcd503cd24b2fe0",
+      "compressed_sha256": "bdfa73d701d53cf92a837b3b2dea81726b42a1452fc172a1f56578717ec2d678"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261123_223005.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261123_223005.txt.gz",
+      "original_size": 547333,
+      "compressed_size": 62966,
+      "original_sha256": "b341e577e68122989905bb913813454b055e6d1b02c8e4c88cafb02993cef642",
+      "compressed_sha256": "685084a744a5657897bea1330d4129f1d56537792334b54c46c27cb6d44ae34a"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261124_105320.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261124_105320.txt.gz",
+      "original_size": 539435,
+      "compressed_size": 59244,
+      "original_sha256": "4a86913fb0e584cc9574fd719986c4c762cd043c328c650fbd9fa421a87c2fab",
+      "compressed_sha256": "a86061df95bd84a9bcc328543ce55a8f39ad416089ab51dc1f5e00072c5dc3b9"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261124_224759.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261124_224759.txt.gz",
+      "original_size": 541742,
+      "compressed_size": 60509,
+      "original_sha256": "f27002a13d8af2e502be0cd15c9665943163566fa2b4509148791cd422818d0d",
+      "compressed_sha256": "8b1973c8dff3b6d88af7b3a2444e0b6ed665b5d947dcf9fc51248dae89337997"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261125_083724.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261125_083724.txt.gz",
+      "original_size": 545305,
+      "compressed_size": 58970,
+      "original_sha256": "e1f3521e2ee021b5faf1995516eae6b548bbe1e63755cdd63bc19a7c4ab1e5a1",
+      "compressed_sha256": "b2a7b8d058ec55a918a0f6fc85b45d12deb8c1ec1d49816836053f324ec4bca2"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261125_221418.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261125_221418.txt.gz",
+      "original_size": 545585,
+      "compressed_size": 60566,
+      "original_sha256": "2c858f9b47422774c2d804ed02f908b52883b4864e6a2a16148f3c02220c8c96",
+      "compressed_sha256": "5871ee8b9ed2ce65c911dd7b5577819ae0f009e4a771edf4683e4b4f8d6add06"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261126_081650.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261126_081650.txt.gz",
+      "original_size": 544038,
+      "compressed_size": 58847,
+      "original_sha256": "25039c0d255ef023a0974b01e1daecbf2f0df2da831c8bb1a2fa8648fb975c06",
+      "compressed_sha256": "ea7b27082fe914c960887c7473e369663350434b048276ef30a93bb8bf65bd1a"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261126_215037.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261126_215037.txt.gz",
+      "original_size": 544038,
+      "compressed_size": 60361,
+      "original_sha256": "9953b68b063e45c68f49c0d19727a50455e1543e3b73ad7194238a838da5dcc9",
+      "compressed_sha256": "a280aad2ccc0bbef9076bfbcf77961c5638c4fa93c306d60631fd53c27c1eaad"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261127_083332.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261127_083332.txt.gz",
+      "original_size": 552084,
+      "compressed_size": 59966,
+      "original_sha256": "9f2548141e9093c62b3f63ddec670b37d109bac71f04ad622722c1b3d6665f5a",
+      "compressed_sha256": "8a61f06722ba3f332843c9d3bcc0b6f4f9a248c2d176c8ffbe4dce63c2c6ffa6"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261127_214637.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261127_214637.txt.gz",
+      "original_size": 551524,
+      "compressed_size": 61409,
+      "original_sha256": "233f91ebef4e013b14169bd424eadd3c620e8d1973eb7a4b49fa3860c6befa61",
+      "compressed_sha256": "f54b978aa606442994abcb60c15a84dc522cf1afa594cc29acc32eea05110d43"
+    },
+    {
+      "original_path": "raw/taoyuan/a_flight_20261128_080027.txt",
+      "compressed_path": "raw/taoyuan/a_flight_20261128_080027.txt.gz",
+      "original_size": 555780,
+      "compressed_size": 59842,
+      "original_sha256": "9e646f9dc75ece374c013e7885398b77195d7d68ca17cb68833022b2904b273a",
+      "compressed_sha256": "b4af357f9025ad221ceb21e1781aa505c8917448bfebcb89efa5af4ae14bebf7"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 """Archive the airport's complete legacy feed without decoding it."""
+import gzip
 import hashlib
 import re
 import sys
@@ -21,11 +22,14 @@ def validate(body, headers):
 def collect(log):
     body, headers = request_bytes(SOURCE_URL, log, enforce_window=False)
     validate(body, headers)
-    path, collected_at = save_snapshot("taoyuan", "a_flight", "txt", body, enforce_window=False)
+    compressed = gzip.compress(body, mtime=0)
+    path, collected_at = save_snapshot("taoyuan", "a_flight", "txt.gz", compressed, enforce_window=False)
     log.snapshots.append(path)
     log.emit("snapshot_saved", source_url=SOURCE_URL, http_status=200,
              collected_at=collected_at, path=path, response_size=len(body),
-             sha256=hashlib.sha256(body).hexdigest())
+             sha256=hashlib.sha256(compressed).hexdigest(),
+             stored_size=len(compressed), content_encoding="gzip",
+             source_sha256=hashlib.sha256(body).hexdigest())
 
 
 if __name__ == "__main__":

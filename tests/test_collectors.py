@@ -1,5 +1,6 @@
 """Offline failure/boundary tests: no real credentials or research snapshots."""
 import contextlib
+import gzip
 from datetime import datetime, timedelta
 import hashlib
 import http.client
@@ -68,10 +69,12 @@ class CollectionTests(unittest.TestCase):
     def test_success_preserves_big5_crlf_and_hash(self):
         with patch.object(common.OPENER,"open",return_value=response()):
             self.assertEqual(common.run_collector("taoyuan",taoyuan.collect),0)
-        p=self.root/f"raw/taoyuan/a_flight_{AT:%Y%m%d_%H%M%S}.txt"
-        self.assertEqual(p.read_bytes(),FEED)
+        p=self.root/f"raw/taoyuan/a_flight_{AT:%Y%m%d_%H%M%S}.txt.gz"
+        self.assertEqual(gzip.decompress(p.read_bytes()), FEED)
         saved=next(r for r in self.records() if r['event']=='snapshot_saved')
-        self.assertEqual(saved['sha256'],hashlib.sha256(FEED).hexdigest())
+        self.assertEqual(saved['sha256'],hashlib.sha256(p.read_bytes()).hexdigest())
+        self.assertEqual(saved['source_sha256'],hashlib.sha256(FEED).hexdigest())
+        self.assertEqual(saved['stored_size'],len(p.read_bytes()))
         self.assertEqual(saved['response_size'],len(FEED))
         self.assertEqual(saved['http_status'],200)
 
@@ -129,8 +132,8 @@ class CollectionTests(unittest.TestCase):
         with patch.object(common.OPENER, 'open', return_value=response()), self.assertRaises(SystemExit) as exit:
             runpy.run_path(taoyuan.__file__, run_name='__main__')
         self.assertEqual(exit.exception.code, 0)
-        fresh_snapshot = old_snapshot.with_name(f'a_flight_{at:%Y%m%d_%H%M%S}.txt')
-        self.assertEqual(fresh_snapshot.read_bytes(), FEED)
+        fresh_snapshot = old_snapshot.with_name(f'a_flight_{at:%Y%m%d_%H%M%S}.txt.gz')
+        self.assertEqual(gzip.decompress(fresh_snapshot.read_bytes()), FEED)
         self.assertEqual(old_snapshot.read_bytes(), FEED)
 
     def test_forecast_download_and_archive_after_former_study_deadline(self):
